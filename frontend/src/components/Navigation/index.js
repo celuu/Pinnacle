@@ -22,12 +22,16 @@ function Navigation() {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
-    </ul>
+    <div className='background'>
+      <ul>
+        <li>
+          <NavLink exact to="/">
+            Home
+          </NavLink>
+          {sessionLinks}
+        </li>
+      </ul>
+    </div>
   );
 }
 
