@@ -5,6 +5,7 @@ import {Route, Switch} from 'react-router-dom'
 import Navigation from "./components/Navigation";
 import './App.css'
 import ErrorPage from "./components/ErrorPage";
+import GroupIndex from "./components/GroupsPage/GroupIndex";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/groups">
+            <GroupIndex />
           </Route>
           <Route>
             <ErrorPage />

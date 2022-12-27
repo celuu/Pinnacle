@@ -10,9 +10,10 @@
 #  image_url       :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  time            :string
 #
 class Group < ApplicationRecord
-    validates :name, :day_of_week, :instructor_name, :location
+    validates :name, :day_of_week, :instructor_name, :location, presence: true
 
     has_many :reservations,
         dependent: :destroy

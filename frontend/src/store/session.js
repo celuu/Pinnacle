@@ -3,6 +3,12 @@ import csrfFetch, {storeCSRFToken} from './csrf';
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 
+
+//ACTION TO GET ALL CLASSES - action for every api aka index, show
+//thunk action to fetch all classes
+
+
+  
 const setCurrentUser = (user) => {
   return {
     type: SET_CURRENT_USER,
@@ -15,6 +21,11 @@ const removeCurrentUser = () => {
     type: REMOVE_CURRENT_USER
   };
 };
+
+
+
+//THUNK ACTIONS
+
 
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;

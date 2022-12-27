@@ -24,10 +24,10 @@ class User < ApplicationRecord
     before_validation :ensure_session_token 
 
     has_many :reservations, 
-        dependent: destroy
+        dependent: :destroy
 
     has_many :reviews, 
-        dependent: destroy    
+        dependent: :destroy    
 
     def self.find_by_credentials(credential, password)
         if credential.include?('@') 
