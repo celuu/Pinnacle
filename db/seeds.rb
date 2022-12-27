@@ -35,5 +35,7 @@ ApplicationRecord.transaction do
     }) 
   end
 
+  puts "Creating groups"
+
   puts "Done!"
 end

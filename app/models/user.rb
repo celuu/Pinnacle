@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  user_id         :bigint
 #  fname           :string           not null
 #  lname           :string           not null
 #  username        :string           not null
@@ -23,6 +22,12 @@ class User < ApplicationRecord
     validates :fname, :lname, :username, :email, :password_digest, :session_token, presence: true
 
     before_validation :ensure_session_token 
+
+    has_many :reservations, 
+        dependent: destroy
+
+    has_many :reviews, 
+        dependent: destroy    
 
     def self.find_by_credentials(credential, password)
         if credential.include?('@') 
