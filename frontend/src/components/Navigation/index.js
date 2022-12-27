@@ -17,7 +17,7 @@ function Navigation() {
       <>
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
-        {/* <NavLink to="/groups">Groups</NavLink> */}
+        <NavLink to="/groups">Groups</NavLink>
       </>
     );
   }

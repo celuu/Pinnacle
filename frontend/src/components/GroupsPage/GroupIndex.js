@@ -13,11 +13,11 @@ const GroupIndex = () => {
     return (
       <>
         <ul>
-          {groups?.map((group) => (
-            <>
+          {groups?.map((group, idx) => (
+            <li key={idx}>
               <h1>{group.name}</h1>
               <h2>{group.instructor_name}</h2>
-            </>
+            </li>
           ))}
         </ul>
       </>
