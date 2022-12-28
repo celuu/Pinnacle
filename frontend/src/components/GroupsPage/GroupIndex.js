@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGroups, getGroups } from "../../store/group";
+import GroupIndexItem from "./GroupIndexItem";
 
 const GroupIndex = () => {
     const dispatch = useDispatch();
@@ -13,12 +14,9 @@ const GroupIndex = () => {
     return (
       <>
         <ul>
-          {groups?.map((group, idx) => (
-            <li key={idx}>
-              <h1>{group.name}</h1>
-              <h2>{group.instructor_name}</h2>
-            </li>
-          ))}
+          {groups?.map((group, idx) => 
+              <GroupIndexItem group={group} key={idx} />
+          )}
         </ul>
       </>
     );

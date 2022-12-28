@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import './App.css'
 import ErrorPage from "./components/ErrorPage";
 import GroupIndex from "./components/GroupsPage/GroupIndex";
+import SingleGroupPage from "./components/SingleGroupPage";
 
 function App() {
   return (
@@ -19,8 +20,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/groups">
+          <Route exact path="/groups">
             <GroupIndex />
+          </Route>
+          <Route path="/groups/:groupId">
+            <SingleGroupPage />
           </Route>
           <Route>
             <ErrorPage />
