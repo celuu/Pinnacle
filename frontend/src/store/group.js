@@ -5,12 +5,12 @@ const RECEIVE_GROUP = "groups/RECEIVE_GROUP";
 
 const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
-  groups,
+  groups
 });
 
 const receiveGroup = (group) => ({
   type: RECEIVE_GROUP,
-  group,
+  group
 });
 
 //SELECTORS
@@ -51,6 +51,7 @@ const groupReducer = (state = {}, action) => {
     let newState = {...state};
     switch (action.type) {
         case RECEIVE_GROUPS:
+            console.log(action.groups);
             return { ...newState, ...action.groups };
         case RECEIVE_GROUP:
             newState[action.group.id] = action.group;

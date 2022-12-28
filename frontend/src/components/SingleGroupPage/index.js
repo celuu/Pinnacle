@@ -8,16 +8,24 @@ const SingleGroupPage = () => {
     const dispatch = useDispatch();
     const {groupId} = useParams();
     const group = useSelector(getGroup(groupId))
+    const sessionUser = useSelector(state => state.session.user)
 
     useEffect(() => {
         dispatch(fetchGroup(groupId))
     }, [dispatch, groupId])
+
+    const onClick = () => {
+        
+    }
+
+
 
     const GroupView = ({group}) => {
         return(
             <>
                 <h1>{group.name}</h1>
                 <p>{group.instructorName}</p>
+                <button>Book</button>
             </>
         )
     }
