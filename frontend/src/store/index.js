@@ -3,13 +3,15 @@ import thunk from 'redux-thunk';
 import session from './session';
 import groupReducer from './group';
 import reservationReducer from './reservation';
+import reviewReducer from './review';
 
 
 let enhancer;
 export const rootReducer = combineReducers({
     session,
     groups: groupReducer,
-    reservations: reservationReducer
+    reservations: reservationReducer,
+    reviews: reviewReducer
 })
 
 if (process.env.NODE_ENV === 'production') {

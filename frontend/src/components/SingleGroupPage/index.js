@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchGroup, getGroup } from "../../store/group";
 import { createReservation, deleteReservation, fetchUserReservationForGroup, getUsersReservationForGroup } from "../../store/reservation";
-
+import ReviewForm from "../ReviewForm";
 
 const SingleGroupPage = () => {
     const dispatch = useDispatch();
@@ -47,13 +47,16 @@ const SingleGroupPage = () => {
 
 
     const GroupView = ({group}) => {
-        return(
-            <>
-                <h1>{group.name}</h1>
-                <p>{group.instructorName}</p>
-                <BookedButton />
-            </>
-        )
+        return (
+          <>
+            <h1>{group.name}</h1>
+            <p>{group.instructorName}</p>
+            <BookedButton />
+            <button>Leave a Review
+              <ReviewForm />
+            </button>
+          </>
+        );
     }
 
     return (
