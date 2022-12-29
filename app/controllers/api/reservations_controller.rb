@@ -1,5 +1,4 @@
 class Api::ReservationsController < ApplicationController
-    # before_action :require_logged_in
 
     def index
         @groupId = request.query_parameters["groupId"] 

@@ -8,47 +8,48 @@ const receiveReservation = (reservation) => ({
   reservation
 });
 
-const removeReservation = (reservationId) => ({
+const removeReservation = (reservation) => ({
     type: REMOVE_RESERVATION,
-    reservationId
+    reservation
 })
 
 
-export const getReservation = (reservationId) => (store) => {
+export const getUsersReservationForGroup = (groupId) => (store) => {
   if (store.reservations) {
-    return store.reservations[reservationId];
+    return store.reservations[groupId];
   } else {
     return null;
   }
 };
 
-export const fetchReservation = (reservationId) => async (dispatch) => {
-  let res = await csrfFetch(`/api/reservations/${reservationId}`);
+
+export const fetchUserReservationForGroup = (groupId) => async (dispatch) => {
+  let res = await csrfFetch(`/api/reservations?group_id=${groupId}`);
   if (res.ok) {
     let reservation = await res.json();
     dispatch(receiveReservation(reservation));
   }
 };
 
-export const createReservation = (reservation) => async (dispatch) => {
+export const createReservation = (groupId) => async (dispatch) => {
     let res = await csrfFetch("/api/reservations", {
-        method: "POST",
-        body: JSON.stringify(reservation),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
+      method: "POST",
+      body: JSON.stringify({ groupId }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
      if (res.ok) {
         let newReservation = await res.json();
         dispatch(receiveReservation(newReservation));
      }
 }
 
-export const deleteReservation = (reservationId) => async (dispatch) => {
-    let res = await csrfFetch(`/api/reservations/${reservationId}`, {
+export const deleteReservation = (reservation) => async (dispatch) => {
+    let res = await csrfFetch(`/api/reservations/${reservation.id}`, {
         method: "DELETE"
     })
-    dispatch(removeReservation(reservationId))
+    dispatch(removeReservation(reservation))
 }
 
 
@@ -56,10 +57,10 @@ const reservationReducer = (state = {}, action) => {
     let newState = {...state};
     switch (action.type){
         case RECEIVE_RESERVATION:
-            newState[action.reservation.id] = action.reservation;
+            newState[action.reservation.groupId] = action.reservation;
             return newState;
         case REMOVE_RESERVATION:
-            delete newState[action.reservationId]
+            delete newState[action.reservation.groupId]
             return newState;
         default:
             return state;    

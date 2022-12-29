@@ -10,7 +10,10 @@ function Navigation() {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <ProfileButton user={sessionUser} />
+        <NavLink to="/groups">Groups</NavLink>
+      </>
     );
   } else {
     sessionLinks = (
