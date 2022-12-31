@@ -1,0 +1,94 @@
+img {
+    width: auto;
+    height: 17px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    margin: 0px 0px 40px;
+    text-align: center;
+}
+
+.eqx-logo {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.sign-in{
+    color: #FFFFFF;
+    padding: 0px 10px;
+    font-size: 48px;
+    line-height: 110%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'League Gothic', sans-serif;
+}
+
+.credential-label{
+    color: #FFFFFF;
+    opacity: 0.6;
+    font-size: 14px;
+    line-height: 1.15;
+    font: arial;
+}
+
+.line {
+    border: none;
+    color: #000000;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    width: 300px;
+}
+
+.sign-in-bottom {
+    color: #FFFFFF;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+}
+
+
+a:visited {
+    color: #FFFFFF;
+}
+
+.terms {
+    margin: 0px;
+}
+
+.button {
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 200px;
+    margin: 90px 86px 0px;
+    padding: 14px 30px;
+    border-radius: 10rem;
+    align-content: center;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color:#d1d1d1
+}
+
+.sign-up {
+    text-align: center;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.errors {
+    color: red;
+}

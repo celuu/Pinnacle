@@ -4,7 +4,9 @@ const GroupIndexItem = ({group}) => {
     return (
       <li>
         <Link to={`/groups/${group.id}`}>
-          <h1>{group.name}</h1>
+          <h2>{group.name}</h2>
+          <p>{group.location}</p>
+          <p>{group.time}</p>
         </Link>
       </li>
     );

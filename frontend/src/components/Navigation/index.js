@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
@@ -19,19 +19,21 @@ function Navigation() {
     sessionLinks = (
       <>
         <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
         <NavLink to="/groups">Groups</NavLink>
       </>
     );
   }
 
   return (
-    <div className='background'>
+    <div className="background">
+      <Link to="/">
+        <img
+          className="login-logo"
+          src="https://assets.cdn-equinox.com/images/equinox-white.svg"
+        ></img>
+      </Link>
       <ul>
         <li>
-          <NavLink exact to="/">
-            Home
-          </NavLink>
           {sessionLinks}
         </li>
       </ul>

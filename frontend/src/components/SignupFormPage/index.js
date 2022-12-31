@@ -41,75 +41,103 @@ const SignupFormPage = () => {
     
     return (
       <>
-      <Link to="/"><img src="https://assets.cdn-equinox.com/images/equinox-white.svg"></img></Link>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          First Name
-          <input
-            type="text"
-            value={fname}
-            onChange={(e) => setFName(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Last Name
-          <input
-            type="text"
-            value={lname}
-            onChange={(e) => setLName(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Sign Up</button>
-      </form></>
+        <Link to="/" className="eqx-logo">
+          <img
+            className="login-logo"
+            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
+          ></img>
+        </Link>
+        <h1 className="sign-up-logo">Sign Up</h1>
+        <br></br>
+        <form className="form" onSubmit={handleSubmit}>
+          <label className="inputs">
+            Email
+            <br></br>
+            <input
+              className="line"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <br />
+          <br></br>
+          <label className="inputs">
+            First Name
+            <br></br>
+            <input
+              className="line"
+              type="text"
+              value={fname}
+              onChange={(e) => setFName(e.target.value)}
+              required
+            />
+          </label>
+          <br />
+          <br />
+          <label className="inputs">
+            Last Name
+            <br></br>
+            <input
+              className="line"
+              type="text"
+              value={lname}
+              onChange={(e) => setLName(e.target.value)}
+              required
+            />
+          </label>
+          <br></br>
+          <br />
+          <label className="inputs">
+            Username
+            <br></br>
+            <input
+              className="line"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+          <br></br>
+          <br />
+          <label className="inputs">
+            Password
+            <br></br>
+            <input
+              className="line"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <br></br>
+          <br />
+          <label className="inputs">
+            Confirm Password
+            <br></br>
+            <input
+              className="line"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+          <br></br>
+          <ul className="errors">
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+          <br />
+          <button className="button" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </>
     );
 }
 

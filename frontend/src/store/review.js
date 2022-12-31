@@ -34,6 +34,14 @@ export const getUsersReviewForGroup = (groupId) => (store) => {
     }
 }
 
+export const fetchUserReviewForGroup = (groupId) => async(dispatch) => {
+  let res = await csrfFetch(`/api/reviews?group_id=${groupId}`);
+  if (res.ok) {
+    let review = await res.json();
+    dispatch(receiveReview(review));
+  }
+}
+
 export const createReview = (groupId) => async(dispatch) => {
     let res = await csrfFetch("/api/reviews", {
       method: "POST",

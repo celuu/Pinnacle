@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/session";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import './LoginForm.css'
 
 
@@ -38,37 +38,63 @@ const LoginFormPage = () => {
          });
     }
 
-
     return (
       <>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-          <label>
-            Username or Email
-            <input
-              type="text"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
-              required
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
-          <button type="submit">Log In</button>
-        </form>
+        <div className="eqx-logo">
+          <img
+            className="login-logo"
+            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
+          ></img>
+          <form onSubmit={handleSubmit}>
+            <ul className="errors">
+              {errors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+            <h1 className="sign-in">sign in</h1>
+            <br></br>
+            <label className="credential-label">
+              Email
+              <br></br>
+              <input
+                className="line"
+                type="text"
+                value={credential}
+                onChange={(e) => setCredential(e.target.value)}
+                required
+              />
+              <br></br>
+            </label>
+            <label className="credential-label">
+              Password
+              <br></br>
+              <input
+                className="line"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
 
-        <button onClick={createDemoUserSession}>Login as Demo User</button>
+            <div className="sign-in-bottom terms">
+              <br></br>
+              <br></br>
+              By clicking "Sign in", you agree to our{" "}
+              <div className="underline">Terms and Conditions</div> and consent
+              to our <div className="underline">Private Policy.</div>
+            </div>
+            <button className="button" type="submit">
+              Sign in
+            </button>
+          </form>
+          <button className="button" onClick={createDemoUserSession}>
+            Login as Demo User
+          </button>
+          <div className="sign-in-bottom sign-up">
+            <Link to="/signup">Create an account</Link>
+          </div>
+        </div>
       </>
     );
 }

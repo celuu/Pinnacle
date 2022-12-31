@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage";
 import GroupIndex from "./components/GroupsPage/GroupIndex";
 import SingleGroupPage from "./components/SingleGroupPage";
 
+
 function App() {
   return (
     <>
