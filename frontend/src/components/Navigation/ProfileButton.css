@@ -14,10 +14,10 @@
 
 /* Rotate first bar */
 .change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
+    transform: translate(0, 5px) rotate(-45deg);
 }
 
 /* Rotate last bar */
 .change .bar2 {
-    transform: translate(0, -11px) rotate(45deg);
+    transform: translate(0, -5px) rotate(45deg);
 }

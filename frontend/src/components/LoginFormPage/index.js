@@ -39,12 +39,13 @@ const LoginFormPage = () => {
     }
 
     return (
-      <>
-        <div className="eqx-logo">
+      <div className="sign-in-wrapper">
+        <div className="sign-in-content">
           <img
             className="login-logo"
             src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-          ></img>
+          />
+          <img src="https://pinnacle-seeds.s3.us-west-1.amazonaws.com/athletic-training.jpg" />
           <form onSubmit={handleSubmit}>
             <h1 className="sign-in">sign in</h1>
             <br></br>
@@ -79,11 +80,11 @@ const LoginFormPage = () => {
             </ul>
 
             <div className="sign-in-bottom terms">
-              <br></br>
-              <br></br>
+              <br/>
+              <br/>
               By clicking "Sign in", you agree to our{" "}
-              <div className="underline">Terms and Conditions</div> and consent
-              to our <div className="underline">Private Policy.</div>
+              <span className="underline">Terms and Conditions</span> and consent
+              to our <span className="underline">Private Policy.</span>
             </div>
             <button className="button" type="submit">
               Sign in
@@ -96,7 +97,7 @@ const LoginFormPage = () => {
             <Link to="/signup">Create an account</Link>
           </div>
         </div>
-      </>
+      </div>
     );
 }
 

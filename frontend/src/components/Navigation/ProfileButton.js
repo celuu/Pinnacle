@@ -10,7 +10,6 @@ function ProfileButton({ user }) {
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
-  
   };
   
   useEffect(() => {
@@ -30,9 +29,11 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+
+
   return (
     <>
-      <div className="container" onClick={openMenu}>
+      <div className={`container ${showMenu && "change"}`} onClick={openMenu}>
         <div className="bar1"></div>
         <div className="bar2"></div>
       </div>

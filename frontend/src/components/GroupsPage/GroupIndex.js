@@ -41,8 +41,12 @@ const GroupIndex = () => {
 
     const ShowLocation = () => {
       <>
-      <h3></h3>
-      </>
+        <li>Equinox Sports Club San Francisco</li>
+        <li>Equinox Pine Street</li>
+        <li>Equinox Union Street</li>
+        <li>Equinox Beale Street</li>
+        <li>Equinox Van Mission</li>
+      </>;
     }
 
 
