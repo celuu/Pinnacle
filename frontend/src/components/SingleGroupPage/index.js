@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchGroup, getGroup } from "../../store/group";
 import { createReservation, deleteReservation, fetchUserReservationForGroup, getUsersReservationForGroup } from "../../store/reservation";
 import { getUsersReviewForGroup, createReview, fetchUserReviewForGroup } from "../../store/review";
+import "./SingleGroupPage.css"
 
 
 const SingleGroupPage = () => {
@@ -85,9 +86,11 @@ const SingleGroupPage = () => {
     const GroupView = ({group}) => {
         return (
           <>
-            <h1>{group.name}</h1>
-            <p>{group.instructorName}</p>
-            <BookedButton />
+            <div className="group-view-info">
+              <h1>{group.name}</h1>
+              <p>{group.instructorName}</p>
+              <BookedButton />
+            </div>
           </>
         );
     }

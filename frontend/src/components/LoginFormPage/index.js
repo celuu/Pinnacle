@@ -46,11 +46,6 @@ const LoginFormPage = () => {
             src="https://assets.cdn-equinox.com/images/equinox-white.svg"
           ></img>
           <form onSubmit={handleSubmit}>
-            <ul className="errors">
-              {errors.map((error) => (
-                <li key={error}>{error}</li>
-              ))}
-            </ul>
             <h1 className="sign-in">sign in</h1>
             <br></br>
             <label className="credential-label">
@@ -77,6 +72,12 @@ const LoginFormPage = () => {
               />
             </label>
 
+            <ul className="errors">
+              {errors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+
             <div className="sign-in-bottom terms">
               <br></br>
               <br></br>
@@ -88,7 +89,7 @@ const LoginFormPage = () => {
               Sign in
             </button>
           </form>
-          <button className="button" onClick={createDemoUserSession}>
+          <button className="demo" onClick={createDemoUserSession}>
             Login as Demo User
           </button>
           <div className="sign-in-bottom sign-up">

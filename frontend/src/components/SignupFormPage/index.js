@@ -47,96 +47,98 @@ const SignupFormPage = () => {
             src="https://assets.cdn-equinox.com/images/equinox-white.svg"
           ></img>
         </Link>
-        <h1 className="sign-up-logo">Sign Up</h1>
-        <br></br>
-        <form className="form" onSubmit={handleSubmit}>
-          <label className="inputs">
-            Email
-            <br></br>
-            <input
-              className="line"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </label>
-          <br />
+        <div className="around-form">
+          <h1 className="sign-up-logo">Sign Up</h1>
           <br></br>
-          <label className="inputs">
-            First Name
+          <form className="form" onSubmit={handleSubmit}>
+            <label className="inputs">
+              Email
+              <br></br>
+              <input
+                className="line"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+            <br />
             <br></br>
-            <input
-              className="line"
-              type="text"
-              value={fname}
-              onChange={(e) => setFName(e.target.value)}
-              required
-            />
-          </label>
-          <br />
-          <br />
-          <label className="inputs">
-            Last Name
+            <label className="inputs">
+              First Name
+              <br></br>
+              <input
+                className="line"
+                type="text"
+                value={fname}
+                onChange={(e) => setFName(e.target.value)}
+                required
+              />
+            </label>
+            <br />
+            <br />
+            <label className="inputs">
+              Last Name
+              <br></br>
+              <input
+                className="line"
+                type="text"
+                value={lname}
+                onChange={(e) => setLName(e.target.value)}
+                required
+              />
+            </label>
             <br></br>
-            <input
-              className="line"
-              type="text"
-              value={lname}
-              onChange={(e) => setLName(e.target.value)}
-              required
-            />
-          </label>
-          <br></br>
-          <br />
-          <label className="inputs">
-            Username
+            <br />
+            <label className="inputs">
+              Username
+              <br></br>
+              <input
+                className="line"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </label>
             <br></br>
-            <input
-              className="line"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </label>
-          <br></br>
-          <br />
-          <label className="inputs">
-            Password
+            <br />
+            <label className="inputs">
+              Password
+              <br></br>
+              <input
+                className="line"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </label>
             <br></br>
-            <input
-              className="line"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
-          <br></br>
-          <br />
-          <label className="inputs">
-            Confirm Password
+            <br />
+            <label className="inputs">
+              Confirm Password
+              <br></br>
+              <input
+                className="line"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </label>
             <br></br>
-            <input
-              className="line"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </label>
-          <br></br>
-          <ul className="errors">
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-          <br />
-          <button className="button" type="submit">
-            Sign Up
-          </button>
-        </form>
+            <ul className="errors">
+              {errors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+            <br />
+            <button className="sign-up-form-button" type="submit">
+              Sign Up
+            </button>
+          </form>
+        </div>
       </>
     );
 }

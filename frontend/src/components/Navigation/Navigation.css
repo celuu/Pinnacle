@@ -1,0 +1,28 @@
+.nav-bar {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+.nav-buttons {
+    align-items: center;
+}
+
+.top-bar {
+    text-decoration: none;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: #FFFFFF99;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+}
+
+.top-bar:hover {
+    color: #FFFFFF;
+}

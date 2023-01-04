@@ -1,7 +1,27 @@
 
-
 .weekday {
+    display: flex;
     color: #FFFFFF;
+    margin-bottom: 10px;
+    align-content: space-between;
+    align-items: center;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px; 
+}
+
+.weekday:hover {
+    cursor: pointer;
+    color: #FFFFFF99;
+}
+
+.weekday-classes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.show-class-info {
+    margin: 10px 10px 10px 10px;
 }
 
 

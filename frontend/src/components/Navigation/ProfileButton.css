@@ -1,0 +1,23 @@
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2{
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF99;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Rotate last bar */
+.change .bar2 {
+    transform: translate(0, -11px) rotate(45deg);
+}

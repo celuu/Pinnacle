@@ -16,7 +16,7 @@ label {
     color: #FFFFFF;
 }
 
-.button {
+.sign-up-form-button {
     letter-spacing: 1px;
     font-size: 14px;
     color: #000000;
@@ -24,7 +24,7 @@ label {
     box-sizing: border-box;
     width: auto;
     min-width: 200px;
-    margin: 90px 86px 0px;
+    margin: 20px 86px 0px;
     padding: 14px 30px;
     border-radius: 10rem;
     align-content: center;
@@ -33,7 +33,7 @@ label {
     cursor: pointer;
 }
 
-.button:hover {
+.sign-up-form-button:hover {
     background-color: #d1d1d1
 }
 
@@ -61,7 +61,17 @@ label {
     flex-direction: column;
 }
 
-.form {
-    align-content: center;
+.errors {
+    color: red;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    list-style: none;
     align-items: center;
+}
+
+.around-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
