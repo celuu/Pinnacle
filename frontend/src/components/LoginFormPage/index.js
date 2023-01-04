@@ -45,7 +45,6 @@ const LoginFormPage = () => {
             className="login-logo"
             src="https://assets.cdn-equinox.com/images/equinox-white.svg"
           />
-          <img src="https://pinnacle-seeds.s3.us-west-1.amazonaws.com/athletic-training.jpg" />
           <form onSubmit={handleSubmit}>
             <h1 className="sign-in">sign in</h1>
             <br></br>
@@ -80,15 +79,17 @@ const LoginFormPage = () => {
             </ul>
 
             <div className="sign-in-bottom terms">
-              <br/>
-              <br/>
+              <br />
+              <br />
               By clicking "Sign in", you agree to our{" "}
-              <span className="underline">Terms and Conditions</span> and consent
-              to our <span className="underline">Private Policy.</span>
+              <span className="underline">Terms and Conditions</span> and
+              consent to our <span className="underline">Private Policy.</span>
             </div>
-            <button className="button" type="submit">
-              Sign in
-            </button>
+            <div className="button-wrapper">
+              <button className="button" type="submit">
+                Sign in
+              </button>
+            </div>
           </form>
           <button className="demo" onClick={createDemoUserSession}>
             Login as Demo User

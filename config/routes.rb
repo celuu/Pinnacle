@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :reviews, only:[:show, :create, :update, :destroy]
     resource :session, only: [:create, :show, :destroy]
   end 
+
+  get '*path', to: 'static_pages#frontend'
 end

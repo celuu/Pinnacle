@@ -1,0 +1,26 @@
+{
+  "name": "pinnacle",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celuu/Pinnacle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celuu/Pinnacle/issues"
+  },
+  "homepage": "https://github.com/celuu/Pinnacle#readme"
+}

@@ -1,4 +1,4 @@
-.eqx-logo {
+.login-logo {
     width: auto;
     height: 17px;
     display: flex;
@@ -20,7 +20,7 @@
     align-items: center;
     align-content: center;
     flex-direction: column;
-    max-width: 575px;
+    max-width: 400px;
 }
 
 .sign-in{
@@ -40,20 +40,19 @@
     line-height: 1.15;
     font-family: 'Arimo', sans-serif;
     font-size: 12px;
-    
 }
 
 .line {
     border: none;
-    color: #FFFFFF;
-    height: 3rem;
-    background-color: transparent;
+    color: white;
+    height: 2rem;
+    background-color: black;
     border-bottom-style: groove;
-    border-color: #FFFFFF;
     width: 100%;
     font-family: 'Arimo', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 1rem;
+    
 }
 
 .sign-in-bottom {
@@ -84,9 +83,6 @@ a:visited {
     color: #FFFFFF;
 }
 
-.terms {
-    margin: 0px;
-}
 
 .button {
     letter-spacing: 1px;
@@ -98,11 +94,16 @@ a:visited {
     margin: 70px 0px;
     padding: 14px 30px;
     border-radius: 10rem;
-    align-content: center;
     text-align: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    justify-content: center;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 8rem;
 }
 
 .button:hover {
@@ -128,4 +129,8 @@ a:visited {
     font-family: 'Arimo', sans-serif;
     font-size: 14px;
     align-content: center;
+}
+
+input {
+    color: #FFFFFF;
 }

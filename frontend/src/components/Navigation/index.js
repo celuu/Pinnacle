@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useLocation } from 'react-router-dom';
+import { signUp } from '../../store/session';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -11,27 +12,27 @@ function Navigation() {
   console.log(location)
 
   let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <>
-        <div className='nav-bar'>
-          <NavLink to="/clubs" className="top-bar">
-            Clubs
-          </NavLink>
-          <NavLink to="/memberbenefits" className="top-bar">
-            Member Benefits
-          </NavLink>
-          <NavLink to="/groups" className="group-click top-bar">
-            Classes
-          </NavLink>
-          <NavLink to="training" className="top-bar">
-            Training
-          </NavLink>
-          <ProfileButton user={sessionUser} />
-        </div>
-      </>
-    );
-  } else {
+  if (location.pathname === "/login" || location.pathname === "/signup") {
+    sessionLinks = null;
+  } else if (sessionUser) { sessionLinks = (
+    <>
+      <div className="nav-bar">
+        <NavLink to="/clubs" className="top-bar">
+          Clubs
+        </NavLink>
+        <NavLink to="/memberbenefits" className="top-bar">
+          Member Benefits
+        </NavLink>
+        <NavLink to="/groups" className="group-click top-bar">
+          Classes
+        </NavLink>
+        <NavLink to="/training" className="top-bar">
+          Training
+        </NavLink>
+        <ProfileButton user={sessionUser} />
+      </div>
+    </>
+  )} else {
     sessionLinks = (
       <>
         <div className="nav-bar">
@@ -44,7 +45,7 @@ function Navigation() {
           <NavLink to="/groups" className="group-click top-bar">
             Classes
           </NavLink>
-          <NavLink to="training" className="top-bar">
+          <NavLink to="/training" className="top-bar">
             Training
           </NavLink>
           <NavLink to="/login" className="login-click top-bar">
