@@ -6,7 +6,7 @@
     right: 2rem;
 }
 
-.bar1,
+/* .bar1,
 .bar2{
     width: 30px;
     height: 3px;
@@ -16,11 +16,11 @@
 }
 
 /* Rotate first bar */
-.change .bar1 {
+/* .change .bar1 {
     transform: translate(0, 5px) rotate(-45deg);
-}
+} */
 
 /* Rotate last bar */
-.change .bar2 {
+/* .change .bar2 {
     transform: translate(0, -5px) rotate(45deg);
-}
+} */ 

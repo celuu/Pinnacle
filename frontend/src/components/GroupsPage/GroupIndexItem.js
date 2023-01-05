@@ -5,6 +5,7 @@ const GroupIndexItem = ({group}) => {
     return (
       <li className="class-group">
         <Link to={`/groups/${group.id}`} className="single-class">
+          {/* <img src={group.photoUrl} alt=""/> */}
           <p className="information">{group.time}</p>
           <h3 className="information">{group.name}</h3>
           <p className="information">

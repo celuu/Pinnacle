@@ -49,8 +49,6 @@ const GroupIndex = () => {
       </>;
     }
 
-
-
     return (
       <div className="class-container">
         <h1 className="class-title">CLASSES</h1>
@@ -117,6 +115,7 @@ const GroupIndex = () => {
           <ShowClasses className="classes-info" />
         
         </div>
+      
       </div>
     );
 
