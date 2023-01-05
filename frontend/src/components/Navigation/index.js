@@ -1,73 +1,86 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useLocation } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import * as sessionActions from "../../store/session";
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const location = useLocation();
-  console.log(location)
+  const dispatch = useDispatch();
+
+   const logout = (e) => {
+     e.preventDefault();
+     dispatch(sessionActions.logout());
+   };
+
 
   let sessionLinks;
   if (location.pathname === "/login" || location.pathname === "/signup") {
     sessionLinks = null;
   } else if (sessionUser) { sessionLinks = (
     <>
-      <div className="nav-bar">
+      <div className="nav-container">
+        <Link to="/">
+          <img src="https://assets.cdn-equinox.com/images/equinox-white.svg"></img>
+        </Link>
         <NavLink to="/clubs" className="top-bar">
           Clubs
         </NavLink>
         <NavLink to="/memberbenefits" className="top-bar">
           Member Benefits
         </NavLink>
-        <NavLink to="/groups" className="group-click top-bar">
+        <NavLink to="/groups" className="top-bar">
           Classes
         </NavLink>
         <NavLink to="/training" className="top-bar">
           Training
         </NavLink>
+        <li onClick={logout} className="top-bar">
+          Sign out
+        </li>
         <ProfileButton user={sessionUser} />
       </div>
     </>
-  )} else {
+  );} else {
     sessionLinks = (
       <>
-        <div className="nav-bar">
+        <Link to="/">
+          <img
+            className="login-logo"
+            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
+          ></img>
+        </Link>
+        <div className="nav-container">
           <NavLink to="/clubs" className="top-bar">
             Clubs
           </NavLink>
           <NavLink to="/memberbenefits" className="top-bar">
             Member Benefits
           </NavLink>
-          <NavLink to="/groups" className="group-click top-bar">
+          <NavLink to="/groups" className="top-bar">
             Classes
           </NavLink>
           <NavLink to="/training" className="top-bar">
             Training
           </NavLink>
-          <NavLink to="/login" className="login-click top-bar">
+          <NavLink to="/login" className="top-bar">
             Sign in
           </NavLink>
+          
         </div>
       </>
     );
   }
 
+ 
+
   return (
     <div className="nav-bar">
-      <Link to="/">
-        <img
-          className="login-logo"
-          src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-        ></img>
-      </Link>
       <ul>
-        <li>
-          {sessionLinks}
-        </li>
+        <li>{sessionLinks}</li>
       </ul>
     </div>
   );

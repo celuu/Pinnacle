@@ -3,12 +3,14 @@ import "./GroupIndexItem.css"
 
 const GroupIndexItem = ({group}) => {
     return (
-      <li>
+      <li className="class-group">
         <Link to={`/groups/${group.id}`} className="single-class">
           <p className="information">{group.time}</p>
           <h3 className="information">{group.name}</h3>
-          <p className="information">{group.instructorName}</p>
-          <p className="information">{group.location}</p>
+          <p className="information">
+            {group.instructorName} - {group.location}
+          </p>
+          <hr />
         </Link>
       </li>
     );

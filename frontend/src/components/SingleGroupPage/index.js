@@ -77,7 +77,7 @@ const SingleGroupPage = () => {
             <label>Summary
               <textarea onChange={(e) => (setSummary(e.target.value))} value={summary}></textarea>
             </label>
-            <button>Submit</button>
+            <button className="review-form-submit-button">Submit</button>
           </form>
         </>
       )

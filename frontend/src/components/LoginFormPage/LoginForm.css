@@ -2,10 +2,9 @@
     width: auto;
     height: 17px;
     display: flex;
-    vertical-align: middle;
-    align-items: center;
-    margin: 0px 0px 40px;
-    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    
 }
 
 .sign-in-wrapper {
@@ -13,6 +12,7 @@
     align-items: center;
     align-content: center;
     flex-direction: column;
+    padding-top: 150px;
 }
 
 .sign-in-content {

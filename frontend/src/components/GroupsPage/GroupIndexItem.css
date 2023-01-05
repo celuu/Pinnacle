@@ -1,8 +1,24 @@
 .single-class {
     text-decoration: none;
+    color: #FFFFFF;
+    
+}
+
+a:visited {
+    color: #FFFFFF
+}
+
+.single-class:hover {
+    color: #FFFFFF99;
 }
 
 .information {
     font-family: 'Arimo', sans-serif;
     font-size: 14px;
+}
+
+hr {
+    color: white;
+    width: 100%;
+    opacity: .3;
 }

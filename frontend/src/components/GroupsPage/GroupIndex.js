@@ -52,7 +52,9 @@ const GroupIndex = () => {
 
 
     return (
-      <>
+      <div className="class-container">
+        <h1 className="class-title">CLASSES</h1>
+        <ShowLocation />
         <div className="weekday-classes">
           <h2
             onClick={(e) => {
@@ -110,9 +112,12 @@ const GroupIndex = () => {
           >
             Saturday
           </h2>
-          <ShowClasses className="classes-info"/>
         </div>
-      </>
+        <div className="class-wrapper">
+          <ShowClasses className="classes-info" />
+        
+        </div>
+      </div>
     );
 
 }
