@@ -20,13 +20,18 @@
 
 .nav-container {
     position: fixed;
-    width: 100%;
-    max-width: 1440px;
+    width: 100vw;
     height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: black;
+    align-items: center;
+}
+
+.right-nav {
+    display: flex;
+    height: 100%;
     align-items: center;
 }
 

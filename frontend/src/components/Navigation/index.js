@@ -26,34 +26,8 @@ function Navigation() {
         <Link to="/">
           <img src="https://assets.cdn-equinox.com/images/equinox-white.svg"></img>
         </Link>
-        <NavLink to="/clubs" className="top-bar">
-          Clubs
-        </NavLink>
-        <NavLink to="/memberbenefits" className="top-bar">
-          Member Benefits
-        </NavLink>
-        <NavLink to="/groups" className="top-bar">
-          Classes
-        </NavLink>
-        <NavLink to="/training" className="top-bar">
-          Training
-        </NavLink>
-        <li onClick={logout} className="top-bar">
-          Sign out
-        </li>
-        <ProfileButton user={sessionUser} />
-      </div>
-    </>
-  );} else {
-    sessionLinks = (
-      <>
-        <Link to="/">
-          <img
-            className="login-logo"
-            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-          ></img>
-        </Link>
-        <div className="nav-container">
+
+        <div className="right-nav">
           <NavLink to="/clubs" className="top-bar">
             Clubs
           </NavLink>
@@ -66,10 +40,41 @@ function Navigation() {
           <NavLink to="/training" className="top-bar">
             Training
           </NavLink>
-          <NavLink to="/login" className="top-bar">
-            Sign in
-          </NavLink>
-          
+          <li onClick={logout} className="top-bar">
+            Sign out
+          </li>
+          <ProfileButton user={sessionUser} />
+        </div>
+      </div>
+    </>
+  );} else {
+    sessionLinks = (
+      <>
+        <div className="nav-container">
+          <Link to="/">
+            <img
+              className="login-logo"
+              src="https://assets.cdn-equinox.com/images/equinox-white.svg"
+            ></img>
+          </Link>
+
+          <div className="right-nav">
+            <NavLink to="/clubs" className="top-bar">
+              Clubs
+            </NavLink>
+            <NavLink to="/memberbenefits" className="top-bar">
+              Member Benefits
+            </NavLink>
+            <NavLink to="/groups" className="top-bar">
+              Classes
+            </NavLink>
+            <NavLink to="/training" className="top-bar">
+              Training
+            </NavLink>
+            <NavLink to="/login" className="top-bar">
+              Sign in
+            </NavLink>
+          </div>
         </div>
       </>
     );

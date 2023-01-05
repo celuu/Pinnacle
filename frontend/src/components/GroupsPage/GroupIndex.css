@@ -23,7 +23,7 @@
 .class-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .class-title {
@@ -44,7 +44,7 @@
 
 .show-class-info {
     padding-top: 50px;
-    margin-left: 120px;
+    width: 50%
 }
 
 

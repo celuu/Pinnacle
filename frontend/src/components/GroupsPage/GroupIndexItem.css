@@ -14,11 +14,46 @@ a:visited {
 
 .information {
     font-family: 'Arimo', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 hr {
     color: white;
     width: 100%;
     opacity: .3;
+}
+
+.class-group {
+    height: 10rem;
+    border-bottom: 0.5px solid #FFFFFF99;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+
+.single-class-photo {
+    height: 90%;
+    width: 30%;
+    object-fit: cover;
+}
+
+.single-class-info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.single-class-time {
+    color: teal;
+}
+
+.single-class-name {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+span {
+    font-style: italic;
 }
