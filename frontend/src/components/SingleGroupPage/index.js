@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchGroup, getGroup } from "../../store/group";
 import { createReservation, deleteReservation, fetchUserReservationForGroup, getUsersReservationForGroup } from "../../store/reservation";
-import { getUsersReviewForGroup, createReview, fetchUserReviewForGroup } from "../../store/review";
+import { getUsersReviewForGroup, createReview, fetchUserReviewForGroup, editReview, deleteReview } from "../../store/review";
 import "./SingleGroupPage.css"
+import ReviewButton from "./ReviewButton";
 
 
 const SingleGroupPage = () => {
@@ -14,13 +15,10 @@ const SingleGroupPage = () => {
     const reservation = useSelector(getUsersReservationForGroup(groupId));
     const sessionUser = useSelector(state => state.session.user);
     let [showReviewInput, setShowReviewInput] = useState(false);
-    
-    
 
     useEffect(() => {
         dispatch(fetchGroup(groupId))
         dispatch(fetchUserReservationForGroup(groupId))
-        
     }, [dispatch, groupId])
 
     const BookedButton = () => {
@@ -59,18 +57,20 @@ const SingleGroupPage = () => {
       useEffect(() => {
         dispatch(fetchUserReviewForGroup(groupId));
       }, [dispatch])
-
-      console.log(reviews)
+      
       return (
         <ul className="review-elements-container">
           <h1 className="review-header">Reviews</h1>
-          {reviews?.map((review, idx) => (
-            <>
-              <li>{}</li>
+          {reviews?.filter((review) => {
+            return review.groupId === parseInt(groupId)
+          }).map((review, idx) => (
+            <div className="single-review">
+              <li className="review-elements">{review?.user?.username} : </li>
               <li className="review-elements" key={idx}>
                 {review.summary}
               </li>
-            </>
+              <ReviewButton review={review}/>
+            </div>
           ))}
         </ul>
       );
@@ -81,6 +81,7 @@ const SingleGroupPage = () => {
       const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(createReview(groupId, summary));
+        setSummary("");
       };
       if (!sessionUser) {
           return null;

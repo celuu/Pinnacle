@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
 
     def index
         @groupId = request.query_parameters["group_id"] 
-        @reviews = Review.where(user_id: current_user.id).where(group_id: @groupId)
+        @reviews = Review.where(group_id: @groupId)
         if @reviews
             render :index
         else 
