@@ -91,7 +91,6 @@ const SingleGroupPage = () => {
           <h1 className="review-title">LEAVE A REVIEW</h1>
           <form onSubmit={handleSubmit}>
             <label className="summary">
-              Summary
               <textarea
                 className="summary-input"
                 onChange={(e) => 

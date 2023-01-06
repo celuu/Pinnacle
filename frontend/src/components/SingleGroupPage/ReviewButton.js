@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editReview, deleteReview } from "../../store/review";
 import EditForm from "./EditForm";
+import "./ReviewButton.css"
 
 const ReviewButton = ({ review }) => {
  
@@ -9,8 +10,6 @@ const ReviewButton = ({ review }) => {
   const dispatch = useDispatch();
 
   const [isEdit, setIsEdit] = useState(false);
-
- 
 
   const handleReviewDestroy = (e) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ const ReviewButton = ({ review }) => {
   }
   if (sessionUser.id === review.user.id) {
     return (
-      <>
+      <div className="edit-button-container">
         {isEdit && <EditForm review={review} setIsEdit={setIsEdit}/>}
         <button onClick={(e) => setIsEdit(true)} className="review-edit-button">
           Edit
@@ -30,7 +29,7 @@ const ReviewButton = ({ review }) => {
         <button onClick={handleReviewDestroy} className="review-delete-button">
           Delete
         </button>
-      </>
+      </div>
     );
   }
 };

@@ -19,7 +19,6 @@ const EditForm = ({review, setIsEdit}) => {
            <h1 className="review-title">EDIT REVIEW</h1>
            <form onSubmit={handleEdit}>
              <label className="summary">
-               Summary
                <textarea
                  className="summary-input"
                  onChange={(e) => setSummary(e.target.value)}

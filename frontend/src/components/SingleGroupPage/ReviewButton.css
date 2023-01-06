@@ -1,0 +1,46 @@
+.review-edit-button {
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    height: 30px;
+    min-width: 75px;
+    border-radius: 10rem;
+    align-content: center;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 50px;
+  
+}
+
+.review-edit-button:hover {
+    color: #d1d1d1;
+}
+
+.review-delete-button {
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    height: 30px;
+    min-width: 75px;
+    border-radius: 10rem;
+    align-content: center;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.review-delete-button:hover {
+    color: #d1d1d1;
+}
+
+.edit-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

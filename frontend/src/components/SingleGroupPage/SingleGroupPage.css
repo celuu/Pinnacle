@@ -109,6 +109,10 @@
 
 .summary-input {
     color: #000000;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    height: 70px;
+    width: 100%;
 }
 
 .review-elements {
@@ -140,28 +144,9 @@
 .single-review {
     display: flex;
     flex-direction: row;
+    margin-top: 40px ;
 }
 
-.review-edit-button {
-    letter-spacing: 1px;
-    font-size: 14px;
-    color: #000000;
-    background-color: #FFFFFF;
-    box-sizing: border-box;
-    width: auto;
-    min-width: 200px;
-    margin: 20px 86px 0px;
-    padding: 14px 30px;
-    border-radius: 10rem;
-    align-content: center;
-    text-align: center;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.review-edit-button:hover {
-    color: #d1d1d1;
-}
 
 
 
