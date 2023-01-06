@@ -8,7 +8,7 @@ const GroupIndexItem = ({group}) => {
           <img src={group.photoUrl} alt="" className="single-class-photo" />
           <div className="single-class-info">
             <p className="information single-class-time">{group.time}</p>
-            <h3 className="information single-class-name">{group.name}</h3>
+              <h3 className="information single-class-name">{group.name}</h3>
             <p className="information single-class-instructor">
               {group.instructorName} - <span>{group.location}</span>
             </p>

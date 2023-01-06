@@ -1,12 +1,12 @@
 class Api::ReservationsController < ApplicationController
 
     def index
-        @groupId = request.query_parameters["groupId"] 
-        @reservation = Reservation.all.where(user_id: current_user.id, group_id: @groupId).first
+        @groupId = request.query_parameters["group_id"] 
+        @reservation = Reservation.where(user_id: current_user.id).where(group_id: @groupId).last
         if @reservation
             render :show
         else
-            render json: {};
+            render json: {}
         end
     end
 

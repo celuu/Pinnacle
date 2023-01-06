@@ -1,9 +1,13 @@
 class Api::ReviewsController < ApplicationController
 
     def index
-        @groupId = request.query_parameters["groupId"] 
-        @review = Review.all.where(user_id: current_user.id, group_id: @groupId)
-        render json: @review
+        @groupId = request.query_parameters["group_id"] 
+        @reviews = Review.where(user_id: current_user.id).where(group_id: @groupId)
+        if @reviews
+            render :index
+        else 
+            render json: {}
+        end
     end
 
     def show
@@ -18,7 +22,8 @@ class Api::ReviewsController < ApplicationController
 
     def create
         groupId = params[:group_id]
-        @review = Review.new(user_id: current_user.id, group_id: groupId)
+        summary = params[:summary]
+        @review = Review.new(user_id: current_user.id, group_id: groupId, summary: summary)
         if @review.save
             render :show
         else
@@ -33,7 +38,6 @@ class Api::ReviewsController < ApplicationController
         else
             render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
         end
-
     end
 
     def destroy

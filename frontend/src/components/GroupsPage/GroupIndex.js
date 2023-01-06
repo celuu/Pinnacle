@@ -4,6 +4,15 @@ import { fetchGroups, getGroups } from "../../store/group";
 import GroupIndexItem from "./GroupIndexItem";
 import './GroupIndex.css'
 
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 const GroupIndex = () => {
     const dispatch = useDispatch();

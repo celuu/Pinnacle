@@ -11,16 +11,16 @@ const SingleGroupPage = () => {
     const dispatch = useDispatch();
     const {groupId} = useParams();
     const group = useSelector(getGroup(groupId));
-    const reservation = useSelector(getUsersReservationForGroup(groupId))
-    const sessionUser = useSelector(state => state.session.user)
+    const reservation = useSelector(getUsersReservationForGroup(groupId));
+    const sessionUser = useSelector(state => state.session.user);
     let [showReviewInput, setShowReviewInput] = useState(false);
-    const [summary, setSummary] = useState("")
-    const review = useSelector(getUsersReviewForGroup(groupId))
+    
+    
 
     useEffect(() => {
         dispatch(fetchGroup(groupId))
         dispatch(fetchUserReservationForGroup(groupId))
-        dispatch(fetchUserReviewForGroup(groupId));
+        
     }, [dispatch, groupId])
 
     const BookedButton = () => {
@@ -30,13 +30,15 @@ const SingleGroupPage = () => {
         if (reservation){
             return (
               <>
-                <button onClick={handleDestroy}>cancel booking</button>
+                <button className="book-button" onClick={handleDestroy}>Class Booked</button>
               </>
             ); 
         }
         return (
           <>
-            <button onClick={handleCreate}>Book</button>
+            <button className="book-button" onClick={handleCreate}>
+              Book Class
+            </button>
           </>
         );
     }
@@ -51,44 +53,71 @@ const SingleGroupPage = () => {
         dispatch(deleteReservation(reservation))
     }
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      dispatch(createReview(groupId))
-    }
+    const RenderReview = () => {
+      const reviews = useSelector(getUsersReviewForGroup);
 
-    const RenderReview = ({group}) => {
-      return(
-        <>
-        <ul>
-          {review?.map((review, idx) => {
-            <p>{review.summary}</p>
-          })}
+      useEffect(() => {
+        dispatch(fetchUserReviewForGroup(groupId));
+      }, [dispatch])
+
+      console.log(reviews)
+      return (
+        <ul className="review-elements-container">
+          <h1 className="review-header">Reviews</h1>
+          {reviews?.map((review, idx) => (
+            <>
+              <li>{}</li>
+              <li className="review-elements" key={idx}>
+                {review.summary}
+              </li>
+            </>
+          ))}
         </ul>
-        </>
-      )
-
+      );
     }
 
     const ReviewForm = () => {
-      return(
-        <>
-          <h1>Review</h1>
+      const [summary, setSummary] = useState("");
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createReview(groupId, summary));
+      };
+      if (!sessionUser) {
+          return null;
+      }
+      return (
+        <div className="review-form">
+          <h1 className="review-title">LEAVE A REVIEW</h1>
           <form onSubmit={handleSubmit}>
-            <label>Summary
-              <textarea onChange={(e) => (setSummary(e.target.value))} value={summary}></textarea>
+            <label className="summary">
+              Summary
+              <textarea
+                className="summary-input"
+                onChange={(e) => 
+                  setSummary(e.target.value)
+                }
+                value={summary}
+              />
             </label>
+            <br />
             <button className="review-form-submit-button">Submit</button>
           </form>
-        </>
-      )
+        </div>
+      );
     }
 
     const GroupView = ({group}) => {
         return (
           <>
+            <img src={group.photoUrl} alt="" className="show-image" />
             <div className="group-view-info">
-              <h1>{group.name}</h1>
-              <p>{group.instructorName}</p>
+              <p className="group-information group-time">{group.time}</p>
+              <h1 className="group-title">{group.name}</h1>
+              <p className="group-information group-location">{group.location}</p>
+              <p className="group-information">All Levels Welcome</p>
+              <p className="group-information group-instructor">
+                {group.instructorName}
+              </p>
               <BookedButton />
             </div>
           </>
@@ -98,7 +127,7 @@ const SingleGroupPage = () => {
     return (
       <>
         {!group && <h1>Loading...</h1>}
-        {group && <GroupView group={group}/> }
+        {group && <GroupView group={group} />}
         <ReviewForm />
         <RenderReview />
       </>

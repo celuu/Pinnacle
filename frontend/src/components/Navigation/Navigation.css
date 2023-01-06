@@ -21,7 +21,7 @@
 .nav-container {
     position: fixed;
     width: 100vw;
-    height: 70px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,5 +33,14 @@
     display: flex;
     height: 100%;
     align-items: center;
+}
+
+.eqx-nav-logo {
+    height: 22px;
+    margin-left: 120px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
 }
 

@@ -19,6 +19,10 @@
     padding-top: 40px;
 }
 
+.weekday::selection {
+    color: #FFFFFF99;
+}
+
 
 .class-wrapper {
     display: flex;
