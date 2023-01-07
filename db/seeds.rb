@@ -7,19 +7,25 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-ActiveRecord::Base.connection.reset_pk_sequence!(:users)
-ActiveRecord::Base.connection.reset_pk_sequence!(:groups)
+
+
 
 require "open-uri"
 
-ApplicationRecord.transaction do 
+
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Reservation.destroy_all
+  Review.destroy_all
+  Group.destroy_all
   User.destroy_all
-
+  
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!('users')
+  ActiveRecord::Base.connection.reset_pk_sequence!(:groups)
+  ActiveRecord::Base.connection.reset_pk_sequence!(:reviews)
+  ActiveRecord::Base.connection.reset_pk_sequence!(:reservations)
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -416,4 +422,3 @@ class184.photo.attach(io: URI.open("https://pinnacle-seeds.s3.us-west-1.amazonaw
 class185.photo.attach(io: URI.open("https://pinnacle-seeds.s3.us-west-1.amazonaws.com/pilates.jpg"), filename: "pilates.jpg")
 
   puts "Done!"
-end
