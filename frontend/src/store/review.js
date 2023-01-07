@@ -4,7 +4,6 @@ import csrfFetch from "./csrf";
 const RECEIVE_REVIEWS = "reviews/RECEIVE_REVIEWS";
 const RECEIVE_REVIEW = "reviews/RECEIVE_REVIEW";
 const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
-const UPDATE_REVIEW = "reviews/UPDATE_REVIEW";
 
 const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
@@ -14,11 +13,6 @@ const receiveReview = (review) => ({
 const removeReview = (reviewId) => ({
     type: REMOVE_REVIEW,
     reviewId
-})
-
-const updateReview = (review) => ({
-    type: UPDATE_REVIEW,
-    review
 })
 
 const receiveReviews = (reviews) => ({
@@ -66,7 +60,7 @@ export const editReview = (review) => async (dispatch) => {
   });
   if (res.ok) {
     let editedReview = await res.json();
-    dispatch(updateReview(editedReview));
+    dispatch(receiveReview(editedReview));
   }
 };
 

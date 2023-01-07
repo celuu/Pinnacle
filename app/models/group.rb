@@ -7,7 +7,6 @@
 #  day_of_week     :string           not null
 #  instructor_name :string           not null
 #  location        :string           not null
-#  image_url       :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  time            :string
@@ -22,8 +21,5 @@ class Group < ApplicationRecord
         dependent: :destroy    
 
     has_one_attached :photo    
-
-
-
 
 end

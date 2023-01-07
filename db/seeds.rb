@@ -37,6 +37,24 @@ require "open-uri"
     password: 'password'
   )
 
+  User.create!(
+    username: 'cluu', 
+    fname: "christine",
+    lname: "luu",
+    email: 'christine@gmail.com', 
+    password: 'password',
+    admin: 'true'
+  )
+
+  User.create!(
+    username: 'nishant', 
+    fname: "nishant",
+    lname: "racherla",
+    email: 'nishant@gmail.com', 
+    password: 'password',
+    admin: 'true'
+  )
+
   # More users
   10.times do 
     User.create!({

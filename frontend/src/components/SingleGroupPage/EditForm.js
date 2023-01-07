@@ -9,7 +9,8 @@ const EditForm = ({review, setIsEdit}) => {
 
      const handleEdit = (e) => {
        e.preventDefault();
-       dispatch(editReview(review));
+       const newReview = {...review, summary: summary}
+       dispatch(editReview(newReview));
        setIsEdit(false)
      };
 

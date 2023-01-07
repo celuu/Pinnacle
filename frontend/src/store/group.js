@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 const RECEIVE_GROUPS = "groups/RECEIVE_GROUPS";
 const RECEIVE_GROUP = "groups/RECEIVE_GROUP";
+const REMOVE_GROUP = "groups/REMOVE_GROUP";
 
 const receiveGroups = (groups) => ({
   type: RECEIVE_GROUPS,
@@ -13,7 +14,12 @@ const receiveGroup = (group) => ({
   group
 });
 
-//SELECTORS
+const removeGroup = (groupId) => ({
+  type: REMOVE_GROUP,
+  groupId
+})
+
+ //SELECTORS
 
 export const getGroups = (store) => {
   if (store.groups) {
@@ -47,15 +53,53 @@ export const fetchGroup = (groupId) => async (dispatch) => {
     }
 }
 
+export const createGroup = (group) => async (dispatch) => {
+  let res = await fetch("/api/groups", {
+    method: "POST",
+    body: JSON.stringify(group),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (res.ok) {
+    let newGroup = await res.json();
+    dispatch(receiveGroup(newGroup));
+  }
+};
+
+export const editGroup = (group) => async (dispatch) => {
+  let res = await fetch(`/api/groups/${group.id}`, {
+    method: "PATCH",
+    body: JSON.stringify(post),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (res.ok) {
+    let editedGroup = await res.json();
+    dispatch(receiveGroup(editedGroup));
+  }
+};
+
+export const deleteGroup = (groupId) => async (dispatch) => {
+  let res = await fetch(`/api/groups/${groupId}`, {
+    method: "DELETE",
+  });
+  dispatch(removeGroup(groupId));
+};
+
+
 const groupReducer = (state = {}, action) => {
     let newState = {...state};
     switch (action.type) {
-        case RECEIVE_GROUPS:
-            console.log(action.groups);
+        case RECEIVE_GROUPS: //reconsider changing this
             return { ...newState, ...action.groups };
         case RECEIVE_GROUP:
             newState[action.group.id] = action.group;
             return newState;
+        case REMOVE_GROUP:
+          delete newState[action.groupId];
+          return newState;    
         default:
             return state; 
     }

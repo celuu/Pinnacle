@@ -14,4 +14,33 @@ class Api::GroupsController < ApplicationController
         end
     end
 
+     def create
+        @group = Reservation.new(group_params)
+        if @group.save
+            render :show
+        else
+            render json: { errors: @group.errors.full_messages }, status: :unprocessable_entity 
+        end 
+    end
+
+    def update
+        @group = Group.find(params[:id])
+        if @group.update(group_params)
+            render :show
+        else
+            render json: { errors: @group.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
+    def destroy
+        @group = Group.find(params[:id])
+        @group.delete()
+    end
+
+    private
+
+    def group_params
+        params.require(:groups).permit(:name, :day_of_week, :instructor_name, :location, :created_at, :updated_at, :time)
+    end
+
 end
