@@ -54,7 +54,7 @@ export const fetchGroup = (groupId) => async (dispatch) => {
 }
 
 export const createGroup = (group) => async (dispatch) => {
-  let res = await fetch("/api/groups", {
+  let res = await csrfFetch("/api/groups", {
     method: "POST",
     body: JSON.stringify(group),
     headers: {
@@ -68,9 +68,9 @@ export const createGroup = (group) => async (dispatch) => {
 };
 
 export const editGroup = (group) => async (dispatch) => {
-  let res = await fetch(`/api/groups/${group.id}`, {
+  let res = await csrfFetch(`/api/groups/${group.id}`, {
     method: "PATCH",
-    body: JSON.stringify(post),
+    body: JSON.stringify(group),
     headers: {
       "Content-Type": "application/json",
     },
@@ -82,7 +82,7 @@ export const editGroup = (group) => async (dispatch) => {
 };
 
 export const deleteGroup = (groupId) => async (dispatch) => {
-  let res = await fetch(`/api/groups/${groupId}`, {
+  let res = await csrfFetch(`/api/groups/${groupId}`, {
     method: "DELETE",
   });
   dispatch(removeGroup(groupId));
