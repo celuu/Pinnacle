@@ -7,6 +7,8 @@ import './App.css'
 import ErrorPage from "./components/ErrorPage";
 import GroupIndex from "./components/GroupsPage/GroupIndex";
 import SingleGroupPage from "./components/SingleGroupPage";
+import ClubsPage from "./components/ClubsPage";
+
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route path="/groups/:groupId">
             <SingleGroupPage />
+          </Route>
+          <Route path="/clubs">
+            <ClubsPage />
           </Route>
           <Route>
             <ErrorPage />

@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import "./GroupIndexItem.css"
 
 const GroupIndexItem = ({group}) => {
-
-  
-
   return (
     <> 
       <Link to={`/groups/${group.id}`} className="single-class">

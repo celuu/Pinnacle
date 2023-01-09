@@ -51,7 +51,9 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
         isOpen={openForm}
         onRequestClose={() => setOpenForm(false)}
         style={customStyles}
+        overlayClassName="Overlay"
         closeTimeoutMS={200}
+        contentLabel="admin-class-label"
       >
         <h1>{isEdit ? "Update Class" : "Create Class"}</h1>
 

@@ -15,23 +15,20 @@ const RenderReview = () => {
     }, [dispatch]);
 
     return (
-    <ul className="review-elements-container">
-        
+      <ul className="review-elements-container">
         {reviews
-        ?.filter((review) => {
+          ?.filter((review) => {
             <h1 className="review-header">Reviews</h1>;
             return review.groupId === parseInt(groupId);
-        })
-        .map((review, idx) => (
-            <div className="single-review">
-            <li className="review-elements">{review?.user?.username} : </li>
-            <li className="review-elements" key={idx}>
-                {review.summary}
-            </li>
-            <ReviewButton review={review} />
+          })
+          .map((review, idx) => (
+            <div className="single-review" key={idx}>
+              <li className="review-elements">{review?.user?.username} : </li>
+              <li className="review-elements">{review.summary}</li>
+              <ReviewButton review={review} />
             </div>
-        ))}
-    </ul>
+          ))}
+      </ul>
     );
 };
 

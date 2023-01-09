@@ -1,8 +1,8 @@
-
 .weekday {
     color: #FFFFFF;
     font-family: 'Arimo', sans-serif;
     font-size: 14px; 
+    padding: 5px;
 }
 
 .weekday:hover {
@@ -50,6 +50,16 @@
     padding-top: 50px;
     width: 50%
 }
+
+.weekday-selected {
+    background-color: white;
+    color: black;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 
 
 

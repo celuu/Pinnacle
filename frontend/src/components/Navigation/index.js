@@ -68,13 +68,7 @@ function Navigation() {
     );
   }
 
- 
-
-  return (
-      <ul>
-        <li>{sessionLinks}</li>
-      </ul>
-  );
+  return sessionLinks;
 }
 
 export default Navigation;
