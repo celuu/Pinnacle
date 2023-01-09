@@ -23,13 +23,11 @@ const ReviewForm = () => {
         <div className="review-form">
         <h1 className="review-title">LEAVE A REVIEW</h1>
         <form onSubmit={handleSubmit}>
-            <label className="summary">
             <textarea
                 className="summary-input"
                 onChange={(e) => setSummary(e.target.value)}
                 value={summary}
             />
-            </label>
             <br />
             <button className="review-form-submit-button">Submit</button>
         </form>

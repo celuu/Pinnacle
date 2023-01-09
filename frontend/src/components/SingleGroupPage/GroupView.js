@@ -4,12 +4,16 @@ import { useHistory } from "react-router-dom";
 import { deleteGroup } from "../../store/group";
 import AdminGroupCreate from "../GroupsPage/AdminGroupCreate";
 import BookedButton from "./BookedButton";
+import "./GroupView.css"
+import Modal from "react-modal";
+
 
 const GroupView = ({ group }) => {
   const [openForm, setOpenForm] = useState(false);
   const sessionUser = useSelector(store => store.session.user);
   const history = useHistory();
   const dispatch = useDispatch();
+
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -19,8 +23,10 @@ const GroupView = ({ group }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setOpenForm(true);
   };
+
   return (
     <>
       <img src={group.photoUrl} alt="" className="show-image" />
@@ -33,9 +39,19 @@ const GroupView = ({ group }) => {
           {group.instructorName}
         </p>
         <BookedButton />
-        {sessionUser && sessionUser.admin && (<><button onClick={handleEdit}> Edit </button>
-        <button onClick={handleDelete}>Delete</button>
-        {openForm && <AdminGroupCreate group={group} />}</>)}
+        <div className="button-holder">
+          {sessionUser && sessionUser.admin && (
+            <>
+              <button className="admin-edit-button" onClick={handleEdit}>
+                Edit
+              </button>
+              <button className="admin-delete-button" onClick={handleDelete}>
+                Delete
+              </button>
+              {openForm && <AdminGroupCreate group={group} openForm={openForm} setOpenForm={setOpenForm} />}
+            </>
+          )}
+        </div>
       </div>
     </>
   );

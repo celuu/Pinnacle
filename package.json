@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/celuu/Pinnacle/issues"
   },
-  "homepage": "https://github.com/celuu/Pinnacle#readme"
+  "homepage": "https://github.com/celuu/Pinnacle#readme",
+  "dependencies": {
+    "react-modal": "^3.16.1"
+  }
 }

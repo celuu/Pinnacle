@@ -1,10 +1,31 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createGroup, editGroup, fetchGroup, getGroup } from "../../store/group";
+import { createGroup, editGroup } from "../../store/group";
 import { useParams } from "react-router-dom";
+import "./AdminGroupCreate.css"
+import Modal from "react-modal";
+
+const customStyles = {
+   content: {
+     top: "50%",
+     left: "50%",
+     right: "auto",
+     bottom: "auto",
+     height: "200px",
+     width: "440px",
+     marginRight: "-50%",
+     transform: "translate(-50%, -50%)",
+     border: "none",
+     borderRadius: "5px",
+     backgroundColor: "#FFF",
+     overflow: "hidden",
+   },
+ };
+
+ Modal.setAppElement("#root");
 
 
-const AdminGroupCreate = ({group}) => {
+const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
     const dispatch = useDispatch();
     const {groupId} = useParams();
     const [name, setName] = useState(group ? group.name : "");
@@ -26,10 +47,16 @@ const AdminGroupCreate = ({group}) => {
     };
 
     return (
-      <>
+      <Modal
+        isOpen={openForm}
+        onRequestClose={() => setOpenForm(false)}
+        style={customStyles}
+        closeTimeoutMS={200}
+      >
         <h1>{isEdit ? "Update Class" : "Create Class"}</h1>
+
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="information">
             Name
             <input
               type="text"
@@ -62,16 +89,19 @@ const AdminGroupCreate = ({group}) => {
             ></input>
           </label>
           <label>
-            Name:
+            Time
             <input
               type="text"
               onChange={(e) => setTime(e.target.value)}
               value={time}
             ></input>
           </label>
-          <button>{isEdit ? "Update Class" : "Create Class"}</button>
+          <button onClick={() => setOpenForm(false)}>Back</button>
+          <button className="Admin-group-button">
+            {isEdit ? "Update Class" : "Create Class"}
+          </button>
         </form>
-      </>
+      </Modal>
     );
 }
 

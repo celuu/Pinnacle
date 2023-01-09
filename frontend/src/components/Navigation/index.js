@@ -31,14 +31,8 @@ function Navigation() {
           <NavLink to="/clubs" className="top-bar">
             Clubs
           </NavLink>
-          <NavLink to="/memberbenefits" className="top-bar">
-            Member Benefits
-          </NavLink>
           <NavLink to="/groups" className="top-bar">
             Classes
-          </NavLink>
-          <NavLink to="/training" className="top-bar">
-            Training
           </NavLink>
           <li onClick={logout} className="top-bar">
             Sign out
@@ -62,14 +56,8 @@ function Navigation() {
             <NavLink to="/clubs" className="top-bar">
               Clubs
             </NavLink>
-            <NavLink to="/memberbenefits" className="top-bar">
-              Member Benefits
-            </NavLink>
             <NavLink to="/groups" className="top-bar">
               Classes
-            </NavLink>
-            <NavLink to="/training" className="top-bar">
-              Training
             </NavLink>
             <NavLink to="/login" className="top-bar">
               Sign in
