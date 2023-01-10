@@ -12,7 +12,7 @@ const GroupIndexItem = ({group}) => {
             <p className="information single-class-time">{group.time}</p>
             <h3 className="information single-class-name">{group.name}</h3>
             <p className="information single-class-instructor">
-              {group.instructorName} - <span>{group.location}</span>
+              {group.instructorName} - <span>{group.club.location}</span>
             </p>
           </div>
         </li>

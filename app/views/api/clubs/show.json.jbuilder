@@ -1,0 +1,1 @@
+json.extract! @club, :id, :location, :latitude, :longitude

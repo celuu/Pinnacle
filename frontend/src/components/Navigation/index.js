@@ -24,7 +24,7 @@ function Navigation() {
     <>
       <div className="nav-container">
         <Link to="/">
-          <img className='eqx-nav-logo' src="https://assets.cdn-equinox.com/images/equinox-white.svg"></img>
+          <img className='eqx-nav-logo' src="pinnacle-white.svg"></img>
         </Link>
 
         <div className="right-nav">
@@ -46,10 +46,7 @@ function Navigation() {
       <>
         <div className="nav-container">
           <Link to="/">
-            <img
-              className="eqx-nav-logo"
-              src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-            ></img>
+            <img className="eqx-nav-logo" src="pinnacle-white.svg"></img>
           </Link>
 
           <div className="right-nav">

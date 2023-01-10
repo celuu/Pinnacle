@@ -6,13 +6,15 @@
 #  name            :string           not null
 #  day_of_week     :string           not null
 #  instructor_name :string           not null
-#  location        :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  time            :string
+#  club_id         :bigint
 #
 class Group < ApplicationRecord
-    validates :name, :day_of_week, :instructor_name, :location, presence: true
+    validates :name, :day_of_week, :instructor_name, presence: true
+
+    belongs_to :clubs
 
     has_many :reservations,
         dependent: :destroy

@@ -41,10 +41,7 @@ const LoginFormPage = () => {
     return (
       <div className="sign-in-wrapper">
         <div className="sign-in-content">
-          <img
-            className="login-logo"
-            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-          />
+          <img className="login-logo" src="pinnacle-white.svg" />
           <form onSubmit={handleSubmit}>
             <h1 className="sign-in">sign in</h1>
             <br></br>

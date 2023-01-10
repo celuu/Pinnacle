@@ -5,7 +5,6 @@ import { deleteGroup } from "../../store/group";
 import AdminGroupCreate from "../GroupsPage/AdminGroupCreate";
 import BookedButton from "./BookedButton";
 import "./GroupView.css"
-import Modal from "react-modal";
 
 
 const GroupView = ({ group }) => {
@@ -33,7 +32,7 @@ const GroupView = ({ group }) => {
       <div className="group-view-info">
         <p className="group-information group-time">{group.time}</p>
         <h1 className="group-title">{group.name}</h1>
-        <p className="group-information group-location">{group.location}</p>
+        <p className="group-information group-location">{group.club.location}</p>
         <p className="group-information">All Levels Welcome</p>
         <p className="group-information group-instructor">
           {group.instructorName}

@@ -36,7 +36,7 @@ const GroupIndex = () => {
         {isClicked && (
           <ul className="show-class-info">
             {groups?.map((group, idx) =>
-              group.dayOfWeek === isSelected && group.location === clubLocation ? (
+              group.dayOfWeek === isSelected && group.club.location === clubLocation ? (
                 <GroupIndexItem group={group} key={idx} />
               ) : (
                 ""

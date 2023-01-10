@@ -42,10 +42,7 @@ const SignupFormPage = () => {
     return (
       <>
         <Link to="/" className="eqx-logo">
-          <img
-            className="login-logo"
-            src="https://assets.cdn-equinox.com/images/equinox-white.svg"
-          ></img>
+          <img className="login-logo" src="pinnacle-white.svg"></img>
         </Link>
         <div className="around-form">
           <h1 className="sign-up-logo">Sign Up</h1>

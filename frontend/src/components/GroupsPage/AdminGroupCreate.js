@@ -32,7 +32,7 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
     const [name, setName] = useState(group ? group.name : "");
     const [dayOfWeek, setDayOfWeek] = useState(group ? group.dayOfWeek : "")
     const [instructorName, setInstructorName] = useState(group ? group.instructorName : "")
-    const [location, setLocation] = useState(group ? group.location : "")
+    const [location, setLocation] = useState(group ? group.club.location : "") //COME HERE 
     const [time, setTime] = useState(group ? group.time : "")
     const [isEdit, setIsEdit] = useState(group ? true : false)
     const [errors, setErrors] = useState([]);

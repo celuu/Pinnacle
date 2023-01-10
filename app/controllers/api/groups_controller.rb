@@ -40,7 +40,7 @@ class Api::GroupsController < ApplicationController
 
     private
     def group_params
-        params.require(:group).permit(:name, :day_of_week, :instructor_name, :location, :created_at, :updated_at, :time)
+        params.require(:group).permit(:name, :day_of_week, :instructor_name, :club_id, :created_at, :updated_at, :time)
     end
 
 end
