@@ -8,21 +8,21 @@ const ClubsPage = () => {
     });
 
     if (!isLoaded) return <div>Loading...</div>
-    return <Map />
+    return (
+      <>
+        <Map />
+      </>
+    );
 }
-
-const customStyle = {position: "inherit !important", height: "100px"}
 
 function Map() {
     const center = useMemo(() => ({ lat: 37.78511512985764, lng: -122.40753194602581 }));
     return (
-      <div className="map-container">
+      <div className="map-around">
         <GoogleMap
-          zoom={10}
+          zoom={12}
           center={center}
-          defaultOptions={{
-            styles: customStyle,
-          }}
+          mapContainerClassName="map-container"
         >
           <Marker
             position={{ lat: 37.786810475008565, lng: -122.404356173598931 }}

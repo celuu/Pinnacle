@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage";
 import GroupIndex from "./components/GroupsPage/GroupIndex";
 import SingleGroupPage from "./components/SingleGroupPage";
 import ClubsPage from "./components/ClubsPage";
+import LandingPage from "./components/LandingPage";
 
 
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/clubs">
             <ClubsPage />
+          </Route>
+          <Route exact path="/">
+            <LandingPage />
           </Route>
           <Route>
             <ErrorPage />

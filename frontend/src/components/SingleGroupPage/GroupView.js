@@ -48,7 +48,7 @@ const GroupView = ({ group }) => {
               <button className="admin-delete-button" onClick={handleDelete}>
                 Delete
               </button>
-              {openForm && <AdminGroupCreate group={group} openForm={openForm} setOpenForm={setOpenForm} />}
+              <AdminGroupCreate group={group} openForm={openForm} setOpenForm={setOpenForm} />
             </>
           )}
         </div>

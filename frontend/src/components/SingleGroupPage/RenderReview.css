@@ -1,0 +1,28 @@
+.single-review {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    border: 1px dotted;
+    border-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.review-name {
+    font-size: 20px;
+    margin-bottom: 20px;
+    align-self: baseline;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.review-summary {
+    display: flex;
+}
+

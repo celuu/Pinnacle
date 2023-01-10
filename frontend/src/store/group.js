@@ -37,8 +37,8 @@ export const getGroup = (groupId) => (store) => {
   }
 }
 
-export const fetchGroups = () => async (dispatch) => {
-  let res = await csrfFetch("/api/groups");
+export const fetchGroups = (dayOfWeek) => async (dispatch) => {
+  let res = await csrfFetch(`/api/groups?dayOfWeek=${dayOfWeek}`);
   if (res.ok) {
     let groups = await res.json();
     dispatch(receiveGroups(groups));
@@ -64,6 +64,7 @@ export const createGroup = (group) => async (dispatch) => {
   if (res.ok) {
     let newGroup = await res.json();
     dispatch(receiveGroup(newGroup));
+    return newGroup;
   }
 };
 

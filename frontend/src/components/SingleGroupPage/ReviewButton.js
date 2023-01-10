@@ -22,7 +22,7 @@ const ReviewButton = ({ review }) => {
   if (sessionUser.id === review.user.id) {
     return (
       <div className="edit-button-container">
-        {isEdit && <EditForm review={review} setIsEdit={setIsEdit}/>}
+        <EditForm review={review} setIsEdit={setIsEdit} isEdit={isEdit}/>
         <button onClick={(e) => setIsEdit(true)} className="review-edit-button">
           Edit
         </button>

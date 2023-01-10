@@ -10,9 +10,9 @@
     text-align: center;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    margin-left: 50px;
     border: none;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .Admin-group-button:hover {
@@ -42,3 +42,61 @@
 .ReactModal__Overlay--before-close {
     opacity: 0;
 }
+
+.admin-information {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.text-boxes {
+    border: none;
+    color: white;
+    height: .5rem;
+    background-color: black;
+    border-bottom-style: groove;
+    width: 95%;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.around-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    outline: none;
+}
+
+
+.admin-title {
+    color: #FFFFFF;
+    padding: 0px 10px;
+    font-size: 48px;
+    line-height: 110%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'League Gothic', sans-serif;
+    margin-bottom: 10px;
+}
+
+.errors {
+    margin-bottom: 10px;
+}
+
+

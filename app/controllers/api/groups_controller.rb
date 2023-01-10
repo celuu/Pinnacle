@@ -1,7 +1,8 @@
 class Api::GroupsController < ApplicationController
 
     def index
-        @groups = Group.all
+        day_of_week = params[:day_of_week]
+        @groups = Group.where(day_of_week: day_of_week)
         render :index
     end
 
@@ -15,7 +16,7 @@ class Api::GroupsController < ApplicationController
     end
 
      def create
-        @group = Reservation.new(group_params)
+        @group = Group.new(group_params)
         if @group.save
             render :show
         else
@@ -40,7 +41,7 @@ class Api::GroupsController < ApplicationController
     private
 
     def group_params
-        params.require(:groups).permit(:name, :day_of_week, :instructor_name, :location, :created_at, :updated_at, :time)
+        params.require(:group).permit(:name, :day_of_week, :instructor_name, :location, :created_at, :updated_at, :time)
     end
 
 end

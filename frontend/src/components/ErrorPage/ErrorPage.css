@@ -1,6 +1,11 @@
 .error {
     color: #FFFFFF;
-    font-family: 'Arimo', sans-serif;
+    padding: 0px 10px;
     font-size: 72px;
-    align-items: center;
+    line-height: 110%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'League Gothic', sans-serif;
+    margin-bottom: 10px;
+    padding-top: 120px;
 }
