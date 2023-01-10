@@ -1,35 +1,92 @@
 .hero-container {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: fit-content;
     position: relative;
     padding-top: 100px;
 }
 
+.hero-container-others {
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+}
+
+.row-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    overflow: hidden;
+}
+
+.background-image-gym {
+    background-image: url('../../../public/gym.jpg');
+}
+
+.background-image-nyc {
+    background-image: url('../../../public/equinoxny.jpg');
+
+}
+
+/* .video-container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    /* Make video to at least 100% wide and tall */
+    /* min-width: 100%;
+    min-height: 100%;
+    object-fit: contain; */
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    /* width: auto;
+    height: auto; */
+
+    /* Center the video */
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: scale(0.1);
+    transform: translate(-50%, -50%)
+     */
+/* } */ 
+
+video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
 .greeting {
+    margin-top: 120px;
+    margin-left: 120px;
     position: absolute;
-    bottom: 15%;
-    left: 5%;
+    z-index: 2;
 }
 
 .second-greeting {
-    position: absolute;
     width: 300px;
     background-color: white;
     height: 300px;
-    left: 30px;
-    top: 860px;
     padding: 30px;
+    margin: 100px;
 }
 
 .third-greeting {
-    position: absolute;
     width: 300px;
     background-color: black;
     height: 300px;
-    left: 30px;
-    top: 1860px;
     padding: 30px;
-
+    margin: 100px;
 }
 
 .side-by-side-container {
@@ -39,7 +96,6 @@
 }
 
 .side-by-side {
-    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -82,6 +138,10 @@
 
 .squat {
     width: calc(100vw - 698px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../../../public/squat.jpg');
 }
 
 .vid {
@@ -93,7 +153,6 @@
     font-family: 'League Gothic', sans-serif;
     color: #FFFFFF;
     margin-bottom: 40px;
-
 }
 
 .third-little {
@@ -109,11 +168,13 @@
     flex-direction: row;
     justify-content: space-between;
     position: absolute;
+    margin-top: 600px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(1, 1, 1, 0.2);
 }
 
 .single-div:hover {
     background-color: #FFFFFF;
-    
 }
 
 .single-div:hover p {
@@ -132,9 +193,6 @@
     align-content: center;
     width: 100%;
     border-top: 2px solid #FFFFFF;
-    margin-top: 700px;
+    padding: 20px;
 }
 
-.single-div p {
-    padding: 15px;
-}

@@ -4,12 +4,17 @@ import { useParams } from "react-router-dom";
 import { fetchUserReviewForGroup, getUsersReviewForGroup } from "../../store/review";
 import ReviewButton from "./ReviewButton";
 import "./RenderReview.css"
+import { GiWeightLiftingUp } from "react-icons/gi";
 
 
 const RenderReview = () => {
     const reviews = useSelector(getUsersReviewForGroup);
     const dispatch = useDispatch();
     const {groupId} = useParams();
+
+    const colors = [
+      "red", "orange", "yellow", "green", "blue", "purple"
+    ]
 
     useEffect(() => {
     dispatch(fetchUserReviewForGroup(groupId));
@@ -25,7 +30,11 @@ const RenderReview = () => {
           .map((review, idx) => (
             <div className="single-review" key={idx}>
               <div className="review-container">
-                <li className="review-elements review-name">
+                <li
+                  className="review-elements review-name"
+                  style={{ color: colors[review.user.id % colors.length] }}
+                >
+                  <GiWeightLiftingUp />
                   {review?.user?.username}
                 </li>
                 <li className="review-elements review-summary">
