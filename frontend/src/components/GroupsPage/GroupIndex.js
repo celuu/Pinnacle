@@ -26,6 +26,7 @@ const GroupIndex = () => {
     );
     const [updateLocation, setUpdateLocation] = useState(false)
     const [openForm, setOpenForm] = useState(false)
+    const sessionUser = useSelector((state) => state.session.user);
 
    
 
@@ -49,19 +50,22 @@ const GroupIndex = () => {
         )}
       </>
     );
+    console.log (sessionUser, sessionUser.admin)
 
 
     return (
       <div className="class-container">
         <h1 className="class-title">CLASSES</h1>
         <div className="add-class-container">
-          <RenderClubs setClubLocation={setClubLocation}/>
-          <button
-            className="add-class-button"
-            onClick={(e) => setOpenForm(true)}
-          >
-            Add Class
-          </button>
+          <RenderClubs setClubLocation={setClubLocation} />
+          {sessionUser && sessionUser.admin && (
+              <button
+                className="add-class-button"
+                onClick={(e) => setOpenForm(true)}
+              >
+                Add Class
+              </button>
+            )}
         </div>
         <AdminGroupCreate openForm={openForm} setOpenForm={setOpenForm} />
         <div className="weekday-classes">

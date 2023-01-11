@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchClubs, getClubs } from "../../store/club";
 import "./ClubsPage.css"
 import ListOfClubs from "./ListOfClubs";
+import { BiDumbbell } from "react-icons/bi";
+
 
 
 const ClubsPage = () => {
@@ -28,8 +30,7 @@ function Map() {
      useEffect(() => {
        dispatch(fetchClubs());
      }, [dispatch]);
-     
-     console.log(clubs)
+
 
     return (
       <div className="map-around">
@@ -38,12 +39,13 @@ function Map() {
           center={center}
           mapContainerClassName="map-container"
         >
-          {clubs?.map((club, idx) => 
-            <Marker key={idx}
+          {clubs?.map((club, idx) => (
+            <Marker
+              key={idx}
               position={{ lat: +club.latitude, lng: +club.longitude }}
+              icon={BiDumbbell}
             />
-          )}
-
+          ))}
         </GoogleMap>
       </div>
     );

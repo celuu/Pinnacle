@@ -1,3 +1,20 @@
-h1 {
-    color: #FFFFFF;
+.filter-button {
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    width: 120px;
+    min-width: 50px;
+    padding: 7px 15px;
+    border-radius: 10rem;
+    align-content: center;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+.filter-button:hover {
+    background-color: #d1d1d1;
 }

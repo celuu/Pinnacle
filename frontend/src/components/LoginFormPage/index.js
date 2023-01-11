@@ -24,6 +24,12 @@ const LoginFormPage = () => {
         createSession('Demo-lition', 'password');        
     };
 
+    const createAdminUserSession = () => {
+      createSession("admin", "password");
+    };
+
+
+
     const createSession = (credential, password) => {
          setErrors([]);
          return dispatch(login({ credential, password })).catch(async (res) => {
@@ -91,6 +97,9 @@ const LoginFormPage = () => {
           </form>
           <button className="demo" onClick={createDemoUserSession}>
             Login as Demo User
+          </button>
+          <button className="demo" onClick={createAdminUserSession}>
+            Login as Admin User
           </button>
           <div className="sign-in-bottom sign-up">
             <Link to="/signup">Create an account</Link>

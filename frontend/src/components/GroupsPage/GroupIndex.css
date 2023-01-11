@@ -65,7 +65,7 @@
     color: #000000;
     background-color: #FFFFFF;
     box-sizing: border-box;
-    width: auto;
+    width: 120px;
     min-width: 50px;
     padding: 7px 15px;
     border-radius: 10rem;
@@ -74,11 +74,14 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     border: none;
+    margin-left: 5px;
 }
 
 .add-class-container {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    
 }
 
 .add-class-button:hover {

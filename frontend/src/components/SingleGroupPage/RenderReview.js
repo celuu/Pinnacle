@@ -27,6 +27,7 @@ const RenderReview = () => {
           ?.filter((review) => {
             return review.groupId === parseInt(groupId);
           })
+          .reverse()
           .map((review, idx) => (
             <div className="single-review" key={idx}>
               <div className="review-container">

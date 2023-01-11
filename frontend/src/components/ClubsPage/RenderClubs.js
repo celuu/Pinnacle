@@ -8,8 +8,8 @@ const RenderClubs = ({setClubLocation}) => {
     const [filterClicked, setFilterClicked] = useState(false)
 
     return (
-      <>
-        <button onClick={(e) => setFilterClicked(true)}>Filter</button>
+      <>{}
+        <button className="filter-button" onClick={(e) => setFilterClicked(true)}>Filter</button>
         {filterClicked && <ShowClubs setClubLocation={setClubLocation}/>}
       </>
     );

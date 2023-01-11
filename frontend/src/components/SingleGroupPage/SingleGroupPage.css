@@ -63,8 +63,9 @@
     text-align: center;
     font-family: 'League Gothic', sans-serif;
     color: #FFFFFF;
-    padding-top: 2rem;
+    padding-top: 5rem;
     margin-bottom: 20px;
+
 
 }
 
@@ -152,6 +153,7 @@ textarea:focus {
     text-align: center;
     font-family: 'League Gothic', sans-serif;
     color: #FFFFFF;
+    margin-top: 70px;
 }
 
 

@@ -13,7 +13,7 @@ const ListOfClubs = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="single-club-container">
       {clubs?.map((club, idx) => (
         <SingleLocation club={club} key={idx} />
       ))}
