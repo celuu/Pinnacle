@@ -1,24 +1,24 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchClubs, getClubs } from "../../store/club";
-import SingleLocation from "./SingleLocation";
-import "./ListOfClubs.css"
+import SingleClub from "./SingleClub";
 
-const ListOfClubs = () => {
+const ShowClubs = ({setClubLocation}) => {
   const clubs = useSelector(getClubs);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchClubs());
   }, [dispatch]);
-
+ 
   return (
     <ul>
       {clubs?.map((club, idx) => (
-        <SingleLocation club={club} key={idx} />
+        <SingleClub club={club} key={idx} setClubLocation={setClubLocation} />
       ))}
     </ul>
   );
 };
 
-export default ListOfClubs;
+
+export default ShowClubs;

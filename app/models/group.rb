@@ -14,7 +14,7 @@
 class Group < ApplicationRecord
     validates :name, :day_of_week, :instructor_name, presence: true
 
-    belongs_to :clubs
+    belongs_to :club
 
     has_many :reservations,
         dependent: :destroy

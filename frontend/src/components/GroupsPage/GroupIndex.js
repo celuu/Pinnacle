@@ -4,6 +4,7 @@ import { fetchGroups, getGroups } from "../../store/group";
 import GroupIndexItem from "./GroupIndexItem";
 import './GroupIndex.css'
 import AdminGroupCreate from "./AdminGroupCreate";
+import RenderClubs from "../ClubsPage/RenderClubs";
 
 const weekday = [
   "Sunday",
@@ -26,6 +27,8 @@ const GroupIndex = () => {
     const [updateLocation, setUpdateLocation] = useState(false)
     const [openForm, setOpenForm] = useState(false)
 
+   
+
     useEffect(() => {
         dispatch(fetchGroups(isSelected))
         setUpdateLocation(true)
@@ -36,7 +39,7 @@ const GroupIndex = () => {
         {isClicked && (
           <ul className="show-class-info">
             {groups?.map((group, idx) =>
-              group.dayOfWeek === isSelected && group.club.location === clubLocation ? (
+              group.dayOfWeek === isSelected && group?.club?.location === clubLocation ? (
                 <GroupIndexItem group={group} key={idx} />
               ) : (
                 ""
@@ -47,21 +50,12 @@ const GroupIndex = () => {
       </>
     );
 
-    const ShowLocation = () => {
-      <>
-        <li>Equinox Sports Club San Francisco</li>
-        <li>Equinox Pine Street</li>
-        <li>Equinox Union Street</li>
-        <li>Equinox Beale Street</li>
-        <li>Equinox Van Mission</li>
-      </>;
-    }
 
     return (
       <div className="class-container">
         <h1 className="class-title">CLASSES</h1>
-        <ShowLocation />
         <div className="add-class-container">
+          <RenderClubs setClubLocation={setClubLocation}/>
           <button
             className="add-class-button"
             onClick={(e) => setOpenForm(true)}

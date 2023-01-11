@@ -5,6 +5,7 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useLocation } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
+import logo from "../../assets/pinnacle-white.svg"
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -24,7 +25,7 @@ function Navigation() {
     <>
       <div className="nav-container">
         <Link to="/">
-          <img className='eqx-nav-logo' src="pinnacle-white.svg"></img>
+          <img className='eqx-nav-logo' src={logo}></img>
         </Link>
 
         <div className="right-nav">
@@ -46,7 +47,7 @@ function Navigation() {
       <>
         <div className="nav-container">
           <Link to="/">
-            <img className="eqx-nav-logo" src="pinnacle-white.svg"></img>
+            <img className="eqx-nav-logo" src={logo}></img>
           </Link>
 
           <div className="right-nav">

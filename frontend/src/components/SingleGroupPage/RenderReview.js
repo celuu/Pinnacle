@@ -17,7 +17,7 @@ const RenderReview = () => {
     ]
 
     useEffect(() => {
-    dispatch(fetchUserReviewForGroup(groupId));
+      dispatch(fetchUserReviewForGroup(groupId));
     }, [dispatch]);
 
     return (

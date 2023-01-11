@@ -19,6 +19,7 @@
     text-transform: uppercase;
     text-align: center;
     font-family: 'League Gothic', sans-serif;
+    margin-top: 1px;
 }
 
 .book-button {
@@ -55,9 +56,6 @@
     padding-top: 20px;
 }
 
-.group-time {
-    padding-bottom: 20px;
-}
 
 .review-title {
     font-size: 60px;
@@ -65,7 +63,7 @@
     text-align: center;
     font-family: 'League Gothic', sans-serif;
     color: #FFFFFF;
-    padding-top: 5rem;
+    padding-top: 2rem;
     margin-bottom: 20px;
 
 }
@@ -154,7 +152,6 @@ textarea:focus {
     text-align: center;
     font-family: 'League Gothic', sans-serif;
     color: #FFFFFF;
-    padding-top: 5rem;
 }
 
 

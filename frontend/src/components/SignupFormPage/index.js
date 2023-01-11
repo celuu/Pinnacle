@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
+import logo from "../../assets/pinnacle-white.svg";
 
 
 const SignupFormPage = () => {
@@ -42,7 +43,7 @@ const SignupFormPage = () => {
     return (
       <>
         <Link to="/" className="eqx-logo">
-          <img className="login-logo" src="pinnacle-white.svg"></img>
+          <img className="login-logo" src={logo}></img>
         </Link>
         <div className="around-form">
           <h1 className="sign-up-logo">Sign Up</h1>

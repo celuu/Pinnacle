@@ -93,7 +93,7 @@ export const deleteGroup = (groupId) => async (dispatch) => {
 const groupReducer = (state = {}, action) => {
     let newState = {...state};
     switch (action.type) {
-        case RECEIVE_GROUPS: //reconsider changing this
+        case RECEIVE_GROUPS:
             return { ...newState, ...action.groups };
         case RECEIVE_GROUP:
             newState[action.group.id] = action.group;

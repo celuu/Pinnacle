@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :groups, only: [:index, :show, :create, :update, :destroy]
     resources :reservations, only:[:index, :show, :create, :destroy] 
     resources :reviews, only:[:index, :show, :create, :update, :destroy]
+    resources :clubs, only: [:index, :show]
     resource :session, only: [:create, :show, :destroy]
   end 
 

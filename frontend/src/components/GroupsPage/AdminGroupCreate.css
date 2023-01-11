@@ -93,6 +93,7 @@ button {
     text-align: center;
     font-family: 'League Gothic', sans-serif;
     margin-bottom: 10px;
+    margin-top: 1px;
 }
 
 .errors {

@@ -4,6 +4,7 @@ import session from './session';
 import groupReducer from './group';
 import reservationReducer from './reservation';
 import reviewReducer from './review';
+import clubReducer from './club';
 
 
 let enhancer;
@@ -11,7 +12,8 @@ export const rootReducer = combineReducers({
     session,
     groups: groupReducer,
     reservations: reservationReducer,
-    reviews: reviewReducer
+    reviews: reviewReducer,
+    clubs: clubReducer
 })
 
 if (process.env.NODE_ENV === 'production') {

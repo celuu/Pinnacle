@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/session";
 import { Redirect, Link } from "react-router-dom";
 import './LoginForm.css'
+import logo from "../../assets/pinnacle-white.svg";
 
 
 const LoginFormPage = () => {
@@ -41,7 +42,7 @@ const LoginFormPage = () => {
     return (
       <div className="sign-in-wrapper">
         <div className="sign-in-content">
-          <img className="login-logo" src="pinnacle-white.svg" />
+          <img className="login-logo" src={logo} />
           <form onSubmit={handleSubmit}>
             <h1 className="sign-in">sign in</h1>
             <br></br>
