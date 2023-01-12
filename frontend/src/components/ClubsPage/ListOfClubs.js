@@ -13,11 +13,13 @@ const ListOfClubs = () => {
   }, [dispatch]);
 
   return (
-    <ul className="single-club-container">
-      {clubs?.map((club, idx) => (
-        <SingleLocation club={club} key={idx} />
-      ))}
-    </ul>
+    <div className="top-location">
+      <ul>
+        {clubs?.map((club, idx) => (
+          <SingleLocation club={club} key={idx} />
+        ))}
+      </ul>
+    </div>
   );
 };
 
