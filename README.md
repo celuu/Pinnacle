@@ -6,7 +6,7 @@
 
 ## Overview
 
-Pinnacle[https://pinnacle-nd0f.onrender.com/] is a clone of the luxury fitness club, Equinox[https://www.equinox.com/]. Users can view fitness classes have a 
+[Pinnacle](https://pinnacle-nd0f.onrender.com/) is a clone of the luxury fitness club, [Equinox](https://www.equinox.com/). Users can view fitness classes and are able to learn about what Equinox has to offer.
 
 
 ## Technologies
