@@ -74,15 +74,20 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     border: none;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 
 .add-class-container {
+    width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+}
 
-    
+.buttons-container {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    gap: 15%;
 }
 
 .add-class-button:hover {

@@ -37,7 +37,6 @@ function Map() {
        dispatch(fetchClubs());
      }, [dispatch]);
 
-
     return (
       <div className="map-around">
         <GoogleMap

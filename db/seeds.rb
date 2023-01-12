@@ -107,7 +107,7 @@ require "open-uri"
     longitude: -122.39632967286896,
     latitude: 37.79122846283731,
     address: "320 Mission Street San Francisco, CA 94105",
-    phone_num: "(415 )228-0024"
+    phone_num: "(415) 228-0024"
   })
 
   club5 = Club.create!({

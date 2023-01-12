@@ -15,7 +15,9 @@ const ShowClubs = ({setClubLocation, setFilterClicked}) => {
   return (
     <ul className="dropdown">
       {clubs?.map((club, idx) => (
-        <SingleClub club={club} key={idx} setClubLocation={setClubLocation} />
+        <li className="dropdown-item">
+          <SingleClub club={club} key={idx} setClubLocation={setClubLocation} />
+        </li>
       ))}
     </ul>
   );

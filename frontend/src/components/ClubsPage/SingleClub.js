@@ -7,7 +7,7 @@ const SingleClub = ({club, setClubLocation}) => {
         setClubLocation(club.location)
     }
     return (
-        <h1 onClick={clickHandler} className="club-locations-class-page">{club.location}</h1>
+        <p onClick={clickHandler} className="club-locations-class-page">{club.location}</p>
     )
 }
 

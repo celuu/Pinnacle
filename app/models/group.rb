@@ -22,6 +22,6 @@ class Group < ApplicationRecord
     has_many :reviews, 
         dependent: :destroy    
 
-    has_one_attached :photo    
+    has_one_attached :photo, dependent: :destroy
 
 end

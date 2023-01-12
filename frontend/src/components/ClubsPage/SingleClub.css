@@ -1,16 +1,21 @@
 .club-locations-class-page {
-    border: 1px solid #FFFFFF;
-    color:#FFFFFF;
+    /* border: 1px solid white; */
+    color:#000000;
     font-family: "Arimo";
     font-size: 14px;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 300px;
     height: 20px;
     position: relative;
+    padding: 4px;
 }
 
 .club-locations-class-page:hover {
     cursor: pointer;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: black;
 }
 

@@ -27,6 +27,8 @@ const GroupIndex = () => {
     const [updateLocation, setUpdateLocation] = useState(false)
     const [openForm, setOpenForm] = useState(false)
     const sessionUser = useSelector((state) => state.session.user);
+    const [filterClicked, setFilterClicked] = useState(false)
+
 
    
 
@@ -55,9 +57,14 @@ const GroupIndex = () => {
       <div className="class-container">
         <h1 className="class-title">CLASSES</h1>
         <div className="add-class-container">
-          <div>
-            <RenderClubs setClubLocation={setClubLocation} />
-          </div>
+          <RenderClubs filterClicked={filterClicked} setClubLocation={setClubLocation} />
+          <div className="buttons-container">
+            <button
+            className="filter-button"
+            onClick={(e) => setFilterClicked((prev) => !prev)}
+          >
+            Filter
+          </button>
           {sessionUser && sessionUser.admin && (
             <button
               className="add-class-button"
@@ -66,6 +73,7 @@ const GroupIndex = () => {
               Add Class
             </button>
           )}
+          </div>
         </div>
         <AdminGroupCreate openForm={openForm} setOpenForm={setOpenForm} />
         <div className="weekday-classes">
