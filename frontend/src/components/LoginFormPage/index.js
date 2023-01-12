@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/session";
 import { Redirect, Link } from "react-router-dom";
 import './LoginForm.css'
 import logo from "../../assets/pinnacle-white.svg";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 const LoginFormPage = () => {
@@ -12,6 +14,10 @@ const LoginFormPage = () => {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+      Aos.init({ duration: 400 });
+    }, []);
 
     if (sessionUser) return <Redirect to='/' />
     
@@ -27,8 +33,6 @@ const LoginFormPage = () => {
     const createAdminUserSession = () => {
       createSession("admin", "password");
     };
-
-
 
     const createSession = (credential, password) => {
          setErrors([]);
@@ -46,7 +50,7 @@ const LoginFormPage = () => {
     }
 
     return (
-      <div className="sign-in-wrapper">
+      <div data-aos="fade-up" className="sign-in-wrapper">
         <div className="sign-in-content">
           <img className="login-logo" src={logo} />
           <form onSubmit={handleSubmit}>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 import logo from "../../assets/pinnacle-white.svg";
+import Aos from "aos";
+import "aos/dist/aos.css"
 
 
 const SignupFormPage = () => {
@@ -17,8 +19,14 @@ const SignupFormPage = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([])
 
+     useEffect(() => {
+       Aos.init({ duration: 400 });
+     }, []);
+
 
     if(sessionUser) return <Redirect to="/" />;
+
+    
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -39,13 +47,15 @@ const SignupFormPage = () => {
         }
         return setErrors(['Confirm Password field must be the same as the Password field']);
     }
+
+   
     
     return (
-      <>
+      <div data-aos="fade-up">
         <Link to="/" className="eqx-logo">
           <img className="login-logo" src={logo}></img>
         </Link>
-        <div className="around-form">
+        <div  className="around-form">
           <h1 className="sign-up-logo">Sign Up</h1>
           <br></br>
           <form className="form" onSubmit={handleSubmit}>
@@ -137,7 +147,7 @@ const SignupFormPage = () => {
             </button>
           </form>
         </div>
-      </>
+      </div>
     );
 }
 

@@ -74,13 +74,14 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     border: none;
-    margin-left: 500px;
+    margin-left: 100px;
 }
 
 .add-class-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
+
     
 }
 
