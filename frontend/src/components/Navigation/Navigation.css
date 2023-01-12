@@ -8,10 +8,9 @@
     color: #FFFFFF99;
     font-family: 'Arimo', sans-serif;
     font-size: 14px;
-    margin-top: .70rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
     list-style: none;
+    justify-content: center;
+    margin-left: 5rem;
 }
 
 .top-bar:hover {
@@ -20,9 +19,7 @@
 
 .nav-container {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
+    width: calc(100vw - 240px);
     height: 100px;
     display: flex;
     flex-direction: row;
@@ -30,6 +27,7 @@
     background-color: black;
     align-items: center;
     z-index: 100;
+    padding: 0px 120px;
 }
 
 .right-nav {
@@ -40,10 +38,15 @@
 
 .eqx-nav-logo {
     height: 22px;
-    margin-left: 120px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
 
+.github {
+    color: #FFFFFF;
+    width: 100%;
+    font-size: 30px;
+    margin-left: 20px;  
 }
 

@@ -43,20 +43,21 @@ const LandingPage = () => {
               <h1 className="third-big">UNLIMITED CLASSES</h1>
               <p className="third-little">
                 Classes curated and developed by the industry's best talent,
-                bringing results through innovation.
+                bringing results through&nbsp;innovation.
               </p>
             </div>
             <div className="single-div">
               <h1 className="third-big">PERSONAL TRAINING</h1>
               <p className="third-little">
-                Performance at its highest level with reowned Personal Training.
+                Performance at its highest level with reowned
+                Personal&nbsp;Training.
               </p>
             </div>
             <div className="single-div">
               <h1 className="third-big">STUDIO PILATES</h1>
               <p className="third-little">
                 A purely authentic Pilates experience that strengthens and
-                creates balance in the body.
+                creates balance in the&nbsp;body.
               </p>
             </div>
           </div>

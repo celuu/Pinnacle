@@ -1,1 +1,1 @@
-json.extract! @club, :id, :location, :latitude, :longitude
+json.extract! @club, :id, :location, :latitude, :longitude, :address, :phone_num

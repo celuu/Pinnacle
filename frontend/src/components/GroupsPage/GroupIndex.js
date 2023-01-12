@@ -50,22 +50,22 @@ const GroupIndex = () => {
         )}
       </>
     );
-    console.log (sessionUser, sessionUser.admin)
-
 
     return (
       <div className="class-container">
         <h1 className="class-title">CLASSES</h1>
         <div className="add-class-container">
-          <RenderClubs setClubLocation={setClubLocation} />
+          <div>
+            <RenderClubs setClubLocation={setClubLocation} />
+          </div>
           {sessionUser && sessionUser.admin && (
-              <button
-                className="add-class-button"
-                onClick={(e) => setOpenForm(true)}
-              >
-                Add Class
-              </button>
-            )}
+            <button
+              className="add-class-button"
+              onClick={(e) => setOpenForm(true)}
+            >
+              Add Class
+            </button>
+          )}
         </div>
         <AdminGroupCreate openForm={openForm} setOpenForm={setOpenForm} />
         <div className="weekday-classes">

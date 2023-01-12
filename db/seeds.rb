@@ -80,31 +80,42 @@ require "open-uri"
   club1 = Club.create!({
     location: "Equinox Sports Club San Francisco",
     longitude: -122.40433471519589,
-    latitude: 37.786742643317524
+    latitude: 37.786742643317524,
+    address: "747 Market Street San Francisco, CA 94103",
+    phone_num: "(415)633-3900"
   })
 
   club2 = Club.create!({
     location: "Equinox Pine Street",
     longitude: -122.40129723054208,
-    latitude: 37.792043503834854
+    latitude: 37.792043503834854,
+    address: "301 Pine Street San Francisco, CA 94104",
+    phone_num: "(415)593-4000"
+
   })
 
   club3 = Club.create!({
     location: "Equinox Union Street",
     longitude: -122.43309830170536,
-    latitude: 37.79727467952462
+    latitude: 37.79727467952462,
+    address: "2055 Union Street San Francisco, CA 94123",
+    phone_num: "(415)854-0799"
   })
 
   club4 = Club.create!({
     location: "Equinox Beale Street",
     longitude: -122.39632967286896,
-    latitude: 37.79122846283731
+    latitude: 37.79122846283731,
+    address: "320 Mission Street San Francisco, CA 94105",
+    phone_num: "(415)228-0024"
   })
 
   club5 = Club.create!({
     location: "Equinox Van Mission",
     longitude: -122.41846463054247,
-    latitude: 37.773657089271786
+    latitude: 37.773657089271786,
+    address: "1560 Mission Street San Francisco, CA 94103",
+    phone_num: "(415)228-5259"
   })
 
 

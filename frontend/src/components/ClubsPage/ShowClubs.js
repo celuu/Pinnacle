@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchClubs, getClubs } from "../../store/club";
 import SingleClub from "./SingleClub";
 
-const ShowClubs = ({setClubLocation}) => {
+const ShowClubs = ({setClubLocation, setFilterClicked}) => {
   const clubs = useSelector(getClubs);
   const dispatch = useDispatch();
 
@@ -12,7 +12,7 @@ const ShowClubs = ({setClubLocation}) => {
   }, [dispatch]);
  
   return (
-    <ul>
+    <ul className="dropdown">
       {clubs?.map((club, idx) => (
         <SingleClub club={club} key={idx} setClubLocation={setClubLocation} />
       ))}

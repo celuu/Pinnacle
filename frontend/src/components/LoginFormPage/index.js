@@ -90,7 +90,7 @@ const LoginFormPage = () => {
               consent to our <span className="underline">Private Policy.</span>
             </div>
             <div className="button-wrapper">
-              <button className="button" type="submit">
+              <button className="button-sign-in" type="submit">
                 Sign in
               </button>
             </div>

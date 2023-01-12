@@ -23,6 +23,6 @@
 }
 
 .review-summary {
-    display: flex;
+    align-self: baseline;
 }
 
