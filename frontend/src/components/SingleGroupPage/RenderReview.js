@@ -5,6 +5,7 @@ import { fetchUserReviewForGroup, getUsersReviewForGroup } from "../../store/rev
 import ReviewButton from "./ReviewButton";
 import "./RenderReview.css"
 import { GiWeightLiftingUp } from "react-icons/gi";
+import { clearReviews } from "../../store/review";
 
 
 const RenderReview = () => {
@@ -18,7 +19,11 @@ const RenderReview = () => {
 
     useEffect(() => {
       dispatch(fetchUserReviewForGroup(groupId));
+      return (() => {
+        dispatch(clearReviews())
+      })
     }, [dispatch]);
+    console.log(reviews)
 
     return (
       <ul className="review-elements-container">

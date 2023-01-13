@@ -4,6 +4,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_REVIEWS = "reviews/RECEIVE_REVIEWS";
 const RECEIVE_REVIEW = "reviews/RECEIVE_REVIEW";
 const REMOVE_REVIEW = "reviews/REMOVE_REVIEW";
+const CLEAR_REVIEWS = "reviews/CLEAR_REVIEWS"
 
 const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
@@ -26,6 +27,12 @@ export const getUsersReviewForGroup = (store) => {
     } else {
         return null;
     }
+}
+
+export const clearReviews = () => {
+  return{
+    type: CLEAR_REVIEWS
+  }
 }
 
 export const fetchUserReviewForGroup = (groupId) => async(dispatch) => {
@@ -82,6 +89,8 @@ const reviewReducer = (state = {}, action) => {
         case REMOVE_REVIEW:
             delete newState[action.reviewId];
             return newState;
+        case CLEAR_REVIEWS:
+            return {};
         default:
             return state;    
     }
