@@ -23,7 +23,6 @@ const RenderReview = () => {
         dispatch(clearReviews())
       })
     }, [dispatch]);
-    console.log(reviews)
 
     return (
       <ul className="review-elements-container">
