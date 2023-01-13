@@ -17,7 +17,7 @@ To build Pinnacle, I used a React-Redux frontend paired with a Ruby on Rails bac
 
 Users are able to view classes and filter it based on day of the week and equinox location. Users must be logged in in order to book a class or leave a review on that class. Users can edit or delete the reviews that they left on a class. Admin users have special access where they can add, edit, and delete a class that they would like to add.
 
-## Signifiicant Code
+## Significant Code
 
 The code below demonstrates the use of a Google Maps api. I mapped over data that I received from the backend to create markers. 
 
