@@ -12,8 +12,12 @@ const ReviewForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createReview(groupId, summary));
-        setSummary("");
+        if(summary !== "") {
+            dispatch(createReview(groupId, summary));
+            setSummary("");
+        } else {
+            alert("Enter a summary!")
+        }
     };
 
     if (!sessionUser) {
