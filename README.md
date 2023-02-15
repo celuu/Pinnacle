@@ -17,7 +17,7 @@ To build Pinnacle, I used a React-Redux frontend paired with a Ruby on Rails bac
 
 Users are able to view classes and filter it based on day of the week and equinox location. Users must be logged in in order to book a class or leave a review on that class. Users can edit or delete the reviews that they left on a class. Admin users have special access where they can add, edit, and delete a class that they would like to add.
 
-## Significant Code
+## Highlights
 
 The code below demonstrates the use of a Google Maps api. I mapped over data that I received from the backend to create markers. 
 
@@ -48,5 +48,97 @@ function Map() {
         </GoogleMap>
       </div>
     );
+}
+```
+
+The code below shows how I was able to iterate through days of the week and selecting the current day. It also shows how I was able to fetch the data from the backend and to only grab the data once a user hits a specific day.
+
+```javascript
+const weekday = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+const GroupIndex = () => {
+    const dispatch = useDispatch();
+    const groups = useSelector(getGroups)
+    const [isSelected, setIsSelected] = useState(weekday[(new Date()).getDay()]);
+    const [isClicked, setIsClicked] = useState(true);
+    const [clubLocation, setClubLocation] = useState(
+      "Equinox Sports Club San Francisco"
+    );
+    const [updateLocation, setUpdateLocation] = useState(false)
+    const [openForm, setOpenForm] = useState(false)
+    const sessionUser = useSelector((state) => state.session.user);
+    const [filterClicked, setFilterClicked] = useState(false)
+
+    useEffect(() => {
+        dispatch(fetchGroups(isSelected))
+        setUpdateLocation(true)
+    }, [dispatch, isSelected, updateLocation])
+
+    const ShowClasses = () => (
+      <>
+        {isClicked && (
+          <ul className="show-class-info">
+            {groups?.map((group, idx) =>
+              group.dayOfWeek === isSelected && group?.club?.location === clubLocation ? (
+                <GroupIndexItem group={group} key={idx} />
+              ) : (
+                ""
+              )
+            )}
+          </ul>
+        )}
+      </>
+    );
+
+    return (
+      <div className="class-container">
+        <h1 className="class-title">CLASSES</h1>
+        <div className="add-class-container">
+          <RenderClubs filterClicked={filterClicked} setClubLocation={setClubLocation} />
+          <div className="buttons-container">
+            <button
+            className="filter-button"
+            onClick={(e) => setFilterClicked((prev) => !prev)}
+          >
+            Filter
+          </button>
+          {sessionUser && sessionUser.admin && (
+            <button
+              className="add-class-button"
+              onClick={(e) => setOpenForm(true)}
+            >
+              Add Class
+            </button>
+          )}
+          </div>
+        </div>
+        <AdminGroupCreate openForm={openForm} setOpenForm={setOpenForm} />
+        <div className="weekday-classes">
+          {weekday.map((day, idx) => (
+            <h2
+              key={idx}
+              onClick={(e) => {
+                setIsSelected(day);
+              }}
+              className={isSelected === day ? "weekday-selected" : "weekday"}
+            >
+              {day}
+            </h2>
+          ))}
+        </div>
+        <div className="class-wrapper">
+          <ShowClasses className="classes-info" />
+        </div>
+      </div>
+    );
+
 }
 ```
