@@ -32,7 +32,7 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
     const [name, setName] = useState(group ? group.name : "");
     const [dayOfWeek, setDayOfWeek] = useState(group ? group.dayOfWeek : "")
     const [instructorName, setInstructorName] = useState(group ? group.instructorName : "")
-    const [location, setLocation] = useState(group ? group?.club?.location : "") 
+    const [clubId, setClubId] = useState(group ? group?.clubId : "") 
     const [time, setTime] = useState(group ? group.time : "")
     const [isEdit, setIsEdit] = useState(group ? true : false)
     const [errors, setErrors] = useState([]);
@@ -45,7 +45,7 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
               name,
               day_of_week: dayOfWeek,
               instructor_name: instructorName,
-              location,
+              club_id: clubId,
               time,
               id: groupId,
             };
@@ -67,7 +67,7 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
             name,
             day_of_week: dayOfWeek,
             instructor_name: instructorName,
-            location,
+            club_id: clubId,
             time,
           };
           dispatch(createGroup(group)).then(async (newGroup) => {
@@ -114,12 +114,23 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
             value={name}
           ></input>
           <label className="admin-information">Day of Week</label>
-          <input
-            className="text-boxes"
-            type="text"
+          <select
+            className="dropdown-admin"
             onChange={(e) => setDayOfWeek(e.target.value)}
+            defaultValue={"DEFAULT"}
             value={dayOfWeek}
-          ></input>
+          >
+            <option value="DEFAULT" disabled>
+              Select a Day
+            </option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </select>
 
           <label className="admin-information">Instructor Name</label>
           <input
@@ -130,25 +141,45 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
           ></input>
 
           <label className="admin-information">Location</label>
-          <input
-            className="text-boxes"
-            type="text"
-            onChange={(e) => setLocation(e.target.value)}
-            value={location}
-          ></input>
+          <select
+            className="dropdown-admin"
+            onChange={(e) => setClubId(e.target.value)}
+            defaultValue={"DEFAULT"}
+            value={clubId}
+          >
+            <option value="DEFAULT" disabled>
+              Select a Location
+            </option>
+            <option value="1">Equinox Sports Club San Francisco</option>
+            <option value="2">Equinox Pine Street</option>
+            <option value="3">Equinox Union Street</option>
+            <option value="4">Equinox Beale Street</option>
+            <option value="5">Equinox Van Mission</option>
+          </select>
 
           <label className="admin-information">Time</label>
-          <input
-            className="text-boxes"
-            type="text"
+          <select
+            className="dropdown-admin"
             onChange={(e) => setTime(e.target.value)}
+            defaultValue={"DEFAULT"}
             value={time}
-          ></input>
+          >
+            <option value="DEFAULT" disabled>
+              Select a Time
+            </option>
+            <option value="7:00AM - 7:45AM">7:00AM - 7:45AM</option>
+            <option value="9:00AM - 9:45AM">9:00AM - 9:45AM</option>
+            <option value="12:00PM - 12:45PM">12:00PM - 12:45PM</option>
+            <option value="6:00PM - 6:45PM">6:00PM - 6:45PM</option>
+          </select>
 
           <div className="around-buttons">
             <button
               className="Admin-group-button"
-              onClick={() => setOpenForm(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpenForm(false);
+              }}
             >
               Back
             </button>

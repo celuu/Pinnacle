@@ -5,6 +5,7 @@ import { deleteGroup } from "../../store/group";
 import AdminGroupCreate from "../GroupsPage/AdminGroupCreate";
 import BookedButton from "./BookedButton";
 import "./GroupView.css"
+import defaultGroupClassImage from "../../assets/group-class.jpg";
 
 
 const GroupView = ({ group }) => {
@@ -28,11 +29,17 @@ const GroupView = ({ group }) => {
 
   return (
     <>
-      <img src={group.photoUrl} alt="" className="show-image" />
+      <img
+        src={group.photoUrl ?? defaultGroupClassImage}
+        alt=""
+        className="show-image"
+      />
       <div className="group-view-info">
         <p className="group-information group-time">{group.time}</p>
         <h1 className="group-title">{group.name}</h1>
-        <p className="group-information group-location">{group?.club?.location}</p>
+        <p className="group-information group-location">
+          {group?.club?.location}
+        </p>
         <p className="group-information">All Levels Welcome</p>
         <p className="group-information group-instructor">
           {group.instructorName}
@@ -47,7 +54,11 @@ const GroupView = ({ group }) => {
               <button className="admin-delete-button" onClick={handleDelete}>
                 Delete
               </button>
-              <AdminGroupCreate group={group} openForm={openForm} setOpenForm={setOpenForm} />
+              <AdminGroupCreate
+                group={group}
+                openForm={openForm}
+                setOpenForm={setOpenForm}
+              />
             </>
           )}
         </div>

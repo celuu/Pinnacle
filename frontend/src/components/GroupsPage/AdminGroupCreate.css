@@ -71,6 +71,22 @@
     font-family: 'Arimo', sans-serif;
     font-size: 14px;
     margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.dropdown-admin{
+    border: none;
+    color: white;
+    height: 1.8rem;
+    background-color: black;
+    border-bottom-style: groove;
+    width: 99%;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+    margin-bottom: 1.2rem;
+    outline: none;
+    cursor: pointer;
+
 }
 
 .around-buttons {
