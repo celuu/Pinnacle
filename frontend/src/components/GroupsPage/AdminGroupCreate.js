@@ -30,9 +30,9 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
     const dispatch = useDispatch();
     const {groupId} = useParams();
     const [name, setName] = useState(group ? group.name : "");
-    const [dayOfWeek, setDayOfWeek] = useState(group ? group.dayOfWeek : "")
+    const [dayOfWeek, setDayOfWeek] = useState(group ? group.dayOfWeek : "Sunday")
     const [instructorName, setInstructorName] = useState(group ? group.instructorName : "")
-    const [clubId, setClubId] = useState(group ? group?.clubId : "") 
+    const [clubId, setClubId] = useState(group ? group?.clubId : "1") 
     const [time, setTime] = useState(group ? group.time : "")
     const [isEdit, setIsEdit] = useState(group ? true : false)
     const [errors, setErrors] = useState([]);
@@ -117,12 +117,8 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
           <select
             className="dropdown-admin"
             onChange={(e) => setDayOfWeek(e.target.value)}
-            defaultValue={"DEFAULT"}
             value={dayOfWeek}
           >
-            <option value="DEFAULT" disabled>
-              Select a Day
-            </option>
             <option value="Sunday">Sunday</option>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -144,12 +140,8 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
           <select
             className="dropdown-admin"
             onChange={(e) => setClubId(e.target.value)}
-            defaultValue={"DEFAULT"}
             value={clubId}
           >
-            <option value="DEFAULT" disabled>
-              Select a Location
-            </option>
             <option value="1">Equinox Sports Club San Francisco</option>
             <option value="2">Equinox Pine Street</option>
             <option value="3">Equinox Union Street</option>
@@ -161,12 +153,9 @@ const AdminGroupCreate = ({group, openForm, setOpenForm}) => {
           <select
             className="dropdown-admin"
             onChange={(e) => setTime(e.target.value)}
-            defaultValue={"DEFAULT"}
+
             value={time}
           >
-            <option value="DEFAULT" disabled>
-              Select a Time
-            </option>
             <option value="7:00AM - 7:45AM">7:00AM - 7:45AM</option>
             <option value="9:00AM - 9:45AM">9:00AM - 9:45AM</option>
             <option value="12:00PM - 12:45PM">12:00PM - 12:45PM</option>
